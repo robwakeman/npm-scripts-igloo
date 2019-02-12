@@ -22,6 +22,12 @@ Then to start dev:
 npm start
 ```
 
+For dev, need to keep link to Font Awesome stylesheet. Remove or uncomment for prod.
+
+```html
+<link rel="stylesheet" href="dist/css/fontawesome-all.css" />
+```
+
 ## TODO
 
 - imagemin
