@@ -79,7 +79,7 @@ h2 {
   }
 }
 
-.feature-container {
+.features {
   width: 80%;
   margin: 0 auto 4rem;
   display: grid;
@@ -89,13 +89,13 @@ h2 {
 }
 
 @media only screen and (min-width: 768px) {
-  .feature-container {
+  .features {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .feature-container {
+  .features {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
@@ -111,30 +111,30 @@ h2 {
   }
 }
 
-.feature {
+.features__item {
   margin-bottom: 3rem;
 }
 
-.icon-container span {
+.features__icon span {
   font-size: 1.5rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .icon-container span {
+  .features__icon span {
     font-size: 2rem;
   }
 }
 
-.feature-text {
+.features__text {
   margin-top: 0.5rem;
   background-color: aliceblue;
   padding: 1rem;
   box-shadow: 5px 5px 5px 0px #bbbbbb;
   transform-origin: left;
-  animation: bounceme 0.6s 0.2s ease-in-out forwards;
+  animation: bounce 0.6s 0.2s ease-in-out forwards;
 }
 
-@keyframes bounceme {
+@keyframes bounce {
   0% {
     opacity: 0;
     transform: scale(0.1);
