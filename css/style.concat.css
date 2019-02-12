@@ -4242,12 +4242,6 @@ html {
 }
 
 body {
-  font-family: sans-serif;
-  font-size: 16px;
-  padding: 1rem;
-}
-
-body {
   font-family: 'Poppins', sans-serif;
   font-size: 100%;
   line-height: 1.7;
@@ -4339,6 +4333,10 @@ h2 {
   margin-bottom: 3rem;
 }
 
+.features__icon {
+  margin-bottom: 0.5rem;
+}
+
 .features__icon span {
   font-size: 1.5rem;
 }
@@ -4350,7 +4348,6 @@ h2 {
 }
 
 .features__text {
-  margin-top: 0.5rem;
   background-color: aliceblue;
   padding: 1rem;
   box-shadow: 5px 5px 5px 0px #bbbbbb;
