@@ -24,7 +24,7 @@ Then to start dev:
 npm start
 ```
 
-For dev, need to keep link to Font Awesome stylesheet. Remove or uncomment for prod.
+For dev, need to keep the link to Font Awesome stylesheet in index.html. Remove it for prod.
 
 ```html
 <link rel="stylesheet" href="dist/css/fontawesome-all.css" />
