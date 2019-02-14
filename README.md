@@ -9,8 +9,8 @@ Igloo is just a silly name, because I've thrown in an igloo icon from Font Aweso
 ## How it works
 
 First build CSS:
+
 - compile
-- concatenate
 - prefix
 - compress
 
@@ -24,15 +24,8 @@ Then to start dev:
 npm start
 ```
 
-For dev, need to keep the link to Font Awesome stylesheet in index.html. Remove it for prod.
-
-```html
-<link rel="stylesheet" href="dist/css/fontawesome-all.css" />
-```
-
 ## TODO
 
 - imagemin
 - babel
 - uglify
-- Set up Font Awesome with Sass, so that we don't have to include the entire fontawesome-all.css stylesheet
