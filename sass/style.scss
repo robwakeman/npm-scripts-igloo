@@ -102,13 +102,12 @@ h2 {
 
 .igloo {
   @include fa-icon;
-  @extend .fas;
+  @extend .fas, .fa-2x;
   &:before {
     content: fa-content($fa-var-igloo);
   }
-  font-size: 1.5rem;
-  @include mq('medium') {
-    font-size: 2rem;
+  @include mq('large') {
+    font-size: 3rem;
   }
 }
 

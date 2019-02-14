@@ -31,7 +31,7 @@
   font-size: 1em;
 }
 
-.fa-2x {
+.fa-2x, .igloo {
   font-size: 2em;
 }
 
@@ -5769,16 +5769,15 @@ h2 {
   font-weight: normal;
   line-height: 1;
   vertical-align: -.125em;
-  font-size: 1.5rem;
 }
 
 .igloo:before {
   content: "\f7ae";
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1200px) {
   .igloo {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 

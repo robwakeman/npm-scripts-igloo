@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "devserver": "live-server",
-    "watch-sass": "node-sass sass/style.scss css/style.css --watch",
+    "watch-sass": "node-sass sass/style.scss css/style.css --output-style expanded --watch",
     "compile-sass": "node-sass sass/style.scss css/style.comp.css --output-style expanded",
     "prefix-css": "postcss css/style.comp.css --use autoprefixer -o css/style.prefix.css",
     "compress-css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
