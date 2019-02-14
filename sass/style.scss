@@ -107,7 +107,7 @@ h2 {
     content: fa-content($fa-var-igloo);
   }
   @include mq('large') {
-    font-size: 3rem;
+    font-size: 3em;
   }
 }
 
