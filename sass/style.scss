@@ -69,11 +69,25 @@ h2 {
 .features {
   width: 80%;
   margin: 0 auto 4rem;
-  display: grid;
-  grid-column-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   animation: slide-in 1s ease-in-out forwards;
   transform-origin: left;
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    flex: 280px;
+    margin-right: 2rem;
+  }
+}
+
+@supports (display: grid) {
+  .features {
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    > div {
+      margin-right: 0;
+    }
+  }
 }
 
 @keyframes slide-in {
