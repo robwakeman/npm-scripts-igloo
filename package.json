@@ -10,8 +10,7 @@
     "prefix-css": "postcss css/style.compiled.css --use autoprefixer -o css/style.prefix.css",
     "compress-css": "node-sass css/style.prefix.css css/style.min.css --output-style compressed",
     "build-css": "npm-run-all compile-sass prefix-css compress-css",
-    "watch": "watch \"npm run watch-sass -s\"",
-    "start": "npm-run-all -p devserver watch"
+    "start": "npm-run-all -p devserver watch-sass"
   },
   "browserslist": [
     "last 5 versions"
