@@ -5788,6 +5788,7 @@ h2 {
 .features__text {
   background-color: aliceblue;
   padding: 1rem;
+  border-radius: 5px;
   box-shadow: 5px 5px 5px 0px #bbbbbb;
   transform-origin: left;
   animation: bounce 0.6s 0.2s ease-in-out forwards;
