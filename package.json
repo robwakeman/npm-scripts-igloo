@@ -10,6 +10,7 @@
     "prefix-css": "postcss css/style.compiled.css --use autoprefixer -o css/style.prefix.css",
     "compress-css": "node-sass css/style.prefix.css css/style.min.css --output-style compressed",
     "build-css": "npm-run-all compile-sass prefix-css compress-css",
+    "babel": "babel app.js --watch --out-file app.compiled.js",
     "start": "npm-run-all -p devserver watch-sass"
   },
   "browserslist": [
