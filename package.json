@@ -1,5 +1,5 @@
 {
-  "name": "npmscripts-03",
+  "name": "npm-scripts-igloo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,12 +10,26 @@
     "prefix-css": "postcss css/style.compiled.css --use autoprefixer -o css/style.prefix.css",
     "compress-css": "node-sass css/style.prefix.css css/style.min.css --output-style compressed",
     "build-css": "npm-run-all compile-sass prefix-css compress-css",
-    "babel": "babel app.js --watch --out-file js/app.compiled.js",
-    "start": "npm-run-all -p devserver watch-sass"
+    "babel": "babel app.js --watch -o js/app.compiled.js",
+    "start": "npm-run-all -p devserver watch-sass babel"
   },
   "browserslist": [
     "last 5 versions"
   ],
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "cover 99.5%"
+            ]
+          }
+        }
+      ]
+    ]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
