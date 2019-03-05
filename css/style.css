@@ -5813,6 +5813,12 @@ h2 {
 .wsw__form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.wsw__group {
+  display: flex;
+  flex-direction: column;
 }
 
 .wsw-label {
