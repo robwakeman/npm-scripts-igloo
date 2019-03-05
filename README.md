@@ -27,5 +27,4 @@ npm start
 ## TODO
 
 - imagemin
-- babel
 - uglify
