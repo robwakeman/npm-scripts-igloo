@@ -5672,19 +5672,18 @@ body {
 
 .site-header {
   padding: 2rem;
-  background-color: bisque;
+  background-color: linen;
   margin-bottom: 3rem;
 }
 
 @media only screen and (min-width: 768px) {
   .site-header {
     padding: 4rem 2rem;
-    background-color: linen;
   }
 }
 
 h1 {
-  color: #0d9914;
+  color: #2e1ba6;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -5716,6 +5715,24 @@ h2 {
 
 @media only screen and (min-width: 1200px) {
   h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h3 {
     font-size: 2rem;
   }
 }
@@ -5810,22 +5827,15 @@ h2 {
 }
 
 /*----------------------- Who Studys What Styles ------------------------------ */
-.wsw__form {
+.wsw {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  height: 70vh;
 }
 
-.wsw__group {
-  display: flex;
-  flex-direction: column;
-}
-
-.wsw-label {
-  font-size: 0.9em;
+.wsw__label {
+  display: block;
   padding: 0 0 4px 4px;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .wsw__input {
@@ -5835,7 +5845,13 @@ h2 {
   color: #0b0728;
   border-radius: 4px;
   border: 1px solid #8c899c;
-  width: 50vw;
+  width: 90vw;
+}
+
+@media only screen and (min-width: 768px) {
+  .wsw__input {
+    width: 50vw;
+  }
 }
 
 .wsw__input:focus {
@@ -5845,14 +5861,19 @@ h2 {
 
 .wsw__button {
   font-size: 24px;
-  font-weight: 600;
   padding: 8px 24px;
   background-color: #2e1ba6;
   border: 1px solid #2e1ba6;
   color: #fafafa;
   border-radius: 4px;
-  width: 100%;
+  width: 90vw;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .wsw__button {
+    width: 50vw;
+  }
 }
 
 .wsw__button:focus {
