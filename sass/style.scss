@@ -147,12 +147,12 @@ h2 {
 
 /*----------------------- Who Studys What Styles ------------------------------ */
 
-.wsw {
-  display: grid;
+.wsw__form {
+  display: flex;
+  flex-direction: column;
 }
 
 .wsw-label {
-  display: inline-block;
   font-size: 0.9em;
   padding: 0 0 4px 4px;
   font-weight: 600;
