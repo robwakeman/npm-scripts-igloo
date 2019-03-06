@@ -15,6 +15,7 @@ const wswForm = document.getElementById('wsw-form');
 const inputName = document.getElementById('wsw-name');
 const inputGender = document.getElementById('wsw-gender');
 const inputAge = document.getElementById('wsw-age');
+const inputSubject = document.getElementById('wsw-subject');
 const statementContainer = document.getElementById('wsw-statement');
 
 class PersonClass {
@@ -59,6 +60,7 @@ const makeStudent = e => {
   const nameValue = inputName.value;
   const genderValue = inputGender.value;
   const ageValue = inputAge.value;
+  const subjectValue = inputSubject.value;
   const nameValueLower = nameValue.toLowerCase();
   console.log('nameValue is ', nameValue);
   console.log('nameValueLower is ', nameValueLower);
@@ -67,10 +69,10 @@ const makeStudent = e => {
   // console.log(nameValueLower.study());
 
   // jack works
-  let jack = new Student('Jack', 'male', '55', 'Physics');
+  // let jack = new Student('Jack', 'male', '55', 'Physics');
   // console.log(jack.study());
 
-  let studentObj = new Student(nameValue, genderValue, ageValue, 'Maths');
+  let studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
   // let studentStudy = studentObj.study();
   console.log(studentObj);
   printStatement(studentObj);
