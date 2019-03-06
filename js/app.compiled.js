@@ -28,6 +28,7 @@ var wswForm = document.getElementById('wsw-form');
 var inputName = document.getElementById('wsw-name');
 var inputGender = document.getElementById('wsw-gender');
 var inputAge = document.getElementById('wsw-age');
+var statementContainer = document.getElementById('wsw-statement');
 
 var PersonClass = function () {
   function PersonClass(_name, _gender, _age) {
@@ -80,8 +81,9 @@ var Student = function (_PersonClass) {
 }(PersonClass);
 
 var printStatement = function printStatement(student) {
-  console.log(student.name);
-  console.log(student.study());
+  // console.log(student.name);
+  // console.log(student.study());
+  statementContainer.innerHTML = student.study();
 };
 
 var makeStudent = function makeStudent(e) {

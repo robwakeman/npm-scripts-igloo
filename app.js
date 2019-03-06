@@ -15,6 +15,7 @@ const wswForm = document.getElementById('wsw-form');
 const inputName = document.getElementById('wsw-name');
 const inputGender = document.getElementById('wsw-gender');
 const inputAge = document.getElementById('wsw-age');
+const statementContainer = document.getElementById('wsw-statement');
 
 class PersonClass {
   constructor(_name, _gender, _age) {
@@ -48,8 +49,9 @@ class Student extends PersonClass {
 }
 
 const printStatement = student => {
-  console.log(student.name);
-  console.log(student.study());
+  // console.log(student.name);
+  // console.log(student.study());
+  statementContainer.innerHTML = student.study();
 };
 
 const makeStudent = e => {
