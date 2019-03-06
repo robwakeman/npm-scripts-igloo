@@ -19,10 +19,10 @@ const inputSubject = document.getElementById('wsw-subject');
 const statementContainer = document.getElementById('wsw-statement');
 
 class PersonClass {
-  constructor(_name, _gender, _age) {
-    this.name = _name;
-    this.gender = _gender;
-    this.age = _age;
+  constructor(name, gender, age) {
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
   }
 
   describe() {
@@ -39,15 +39,17 @@ console.log(lucy.describe());
 
 // sub class
 class Student extends PersonClass {
-  constructor(_name, _gender, _age, _subject) {
-    super(_name, _gender, _age);
-    this.subject = _subject;
+  constructor(name, gender, age, subject) {
+    super(name, gender, age);
+    this.subject = subject;
   }
 
   study() {
     return `${this.name}, aged ${this.age}, is studying ${this.subject}`;
   }
 }
+
+const students = [];
 
 const printStatement = student => {
   // console.log(student.name);
@@ -73,6 +75,7 @@ const makeStudent = e => {
   // console.log(jack.study());
 
   let studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
+  students.push(studentObj);
   // let studentStudy = studentObj.study();
   console.log(studentObj);
   printStatement(studentObj);
@@ -83,5 +86,7 @@ const makeStudent = e => {
   let tim = new Student('Tim', 'male', '19', 'Economics');
   // console.log(tim.study());
 })();
+
+console.log(students);
 
 wswForm.addEventListener('submit', makeStudent);

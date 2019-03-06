@@ -32,12 +32,12 @@ var inputSubject = document.getElementById('wsw-subject');
 var statementContainer = document.getElementById('wsw-statement');
 
 var PersonClass = function () {
-  function PersonClass(_name, _gender, _age) {
+  function PersonClass(name, gender, age) {
     _classCallCheck(this, PersonClass);
 
-    this.name = _name;
-    this.gender = _gender;
-    this.age = _age;
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
   }
 
   _createClass(PersonClass, [{
@@ -62,12 +62,12 @@ console.log(lucy.describe());
 var Student = function (_PersonClass) {
   _inherits(Student, _PersonClass);
 
-  function Student(_name, _gender, _age, _subject) {
+  function Student(name, gender, age, subject) {
     _classCallCheck(this, Student);
 
-    var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this, _name, _gender, _age));
+    var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this, name, gender, age));
 
-    _this.subject = _subject;
+    _this.subject = subject;
     return _this;
   }
 
@@ -80,6 +80,8 @@ var Student = function (_PersonClass) {
 
   return Student;
 }(PersonClass);
+
+var students = [];
 
 var printStatement = function printStatement(student) {
   // console.log(student.name);
@@ -105,6 +107,7 @@ var makeStudent = function makeStudent(e) {
   // console.log(jack.study());
 
   var studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
+  students.push(studentObj);
   // let studentStudy = studentObj.study();
   console.log(studentObj);
   printStatement(studentObj);
@@ -115,5 +118,7 @@ var makeStudent = function makeStudent(e) {
   var tim = new Student('Tim', 'male', '19', 'Economics');
   // console.log(tim.study());
 })();
+
+console.log(students);
 
 wswForm.addEventListener('submit', makeStudent);
