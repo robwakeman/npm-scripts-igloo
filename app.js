@@ -1,14 +1,3 @@
-// test babel and const transpiling
-
-function logPet(petName, petType = 'dog') {
-  console.log(`${petName} is a ${petType}`);
-}
-
-logPet('snickers');
-
-const array = [1, 2, 3, 4, 5];
-const [first, second] = array;
-
 // who studies what
 
 const wswForm = document.getElementById('wsw-form');
@@ -17,6 +6,8 @@ const inputGender = document.getElementById('wsw-gender');
 const inputAge = document.getElementById('wsw-age');
 const inputSubject = document.getElementById('wsw-subject');
 const statementContainer = document.getElementById('wsw-statement');
+const studentCountContainer = document.getElementById('wsw-student-count');
+const studentList = document.getElementById('wsw-students');
 
 class PersonClass {
   constructor(name, gender, age) {
@@ -29,13 +20,6 @@ class PersonClass {
     return `${this.name} is ${this.gender} and is ${this.age} years old.`;
   }
 }
-
-const bobby = new PersonClass('Bobby', 'male', '31');
-const lucy = new PersonClass('Lucy', 'female', '24');
-
-// console.clear();
-console.log(bobby.describe());
-console.log(lucy.describe());
 
 // sub class
 class Student extends PersonClass {
@@ -51,10 +35,28 @@ class Student extends PersonClass {
 
 const students = [];
 
+const showStudents = () => {
+  console.log(students);
+  let studentCount = 0;
+  // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
+  while (studentList.firstChild) {
+    studentList.removeChild(studentList.firstChild);
+  }
+  let frag = document.createDocumentFragment();
+  for (let student of students) {
+    studentCount++;
+    let li = document.createElement('li');
+    li.innerHTML = `${student.name} ${student.gender} ${student.age}`;
+    frag.appendChild(li);
+  }
+  studentCountContainer.innerHTML = studentCount;
+  studentList.appendChild(frag);
+};
+
 const printStatement = student => {
-  // console.log(student.name);
-  // console.log(student.study());
   statementContainer.innerHTML = student.study();
+
+  showStudents();
 };
 
 const makeStudent = e => {
@@ -64,29 +66,10 @@ const makeStudent = e => {
   const ageValue = inputAge.value;
   const subjectValue = inputSubject.value;
   const nameValueLower = nameValue.toLowerCase();
-  console.log('nameValue is ', nameValue);
-  console.log('nameValueLower is ', nameValueLower);
-
-  // const nameValueLower = new Student(nameValue, genderValue, ageValue, 'Maths');
-  // console.log(nameValueLower.study());
-
-  // jack works
-  // let jack = new Student('Jack', 'male', '55', 'Physics');
-  // console.log(jack.study());
 
   let studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
   students.push(studentObj);
-  // let studentStudy = studentObj.study();
-  console.log(studentObj);
   printStatement(studentObj);
 };
-
-// this IIFE works
-(() => {
-  let tim = new Student('Tim', 'male', '19', 'Economics');
-  // console.log(tim.study());
-})();
-
-console.log(students);
 
 wswForm.addEventListener('submit', makeStudent);

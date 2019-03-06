@@ -8,20 +8,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// test babel and const transpiling
-
-function logPet(petName) {
-  var petType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'dog';
-
-  console.log(petName + ' is a ' + petType);
-}
-
-logPet('snickers');
-
-var array = [1, 2, 3, 4, 5];
-var first = array[0],
-    second = array[1];
-
 // who studies what
 
 var wswForm = document.getElementById('wsw-form');
@@ -30,6 +16,8 @@ var inputGender = document.getElementById('wsw-gender');
 var inputAge = document.getElementById('wsw-age');
 var inputSubject = document.getElementById('wsw-subject');
 var statementContainer = document.getElementById('wsw-statement');
+var studentCountContainer = document.getElementById('wsw-student-count');
+var studentList = document.getElementById('wsw-students');
 
 var PersonClass = function () {
   function PersonClass(name, gender, age) {
@@ -50,14 +38,8 @@ var PersonClass = function () {
   return PersonClass;
 }();
 
-var bobby = new PersonClass('Bobby', 'male', '31');
-var lucy = new PersonClass('Lucy', 'female', '24');
-
-// console.clear();
-console.log(bobby.describe());
-console.log(lucy.describe());
-
 // sub class
+
 
 var Student = function (_PersonClass) {
   _inherits(Student, _PersonClass);
@@ -83,10 +65,50 @@ var Student = function (_PersonClass) {
 
 var students = [];
 
+var showStudents = function showStudents() {
+  console.log(students);
+  var studentCount = 0;
+  // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
+  while (studentList.firstChild) {
+    studentList.removeChild(studentList.firstChild);
+  }
+  var frag = document.createDocumentFragment();
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = students[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var student = _step.value;
+
+      studentCount++;
+      var li = document.createElement('li');
+      li.innerHTML = student.name + ' ' + student.gender + ' ' + student.age;
+      frag.appendChild(li);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  studentCountContainer.innerHTML = studentCount;
+  studentList.appendChild(frag);
+};
+
 var printStatement = function printStatement(student) {
-  // console.log(student.name);
-  // console.log(student.study());
   statementContainer.innerHTML = student.study();
+
+  showStudents();
 };
 
 var makeStudent = function makeStudent(e) {
@@ -96,29 +118,10 @@ var makeStudent = function makeStudent(e) {
   var ageValue = inputAge.value;
   var subjectValue = inputSubject.value;
   var nameValueLower = nameValue.toLowerCase();
-  console.log('nameValue is ', nameValue);
-  console.log('nameValueLower is ', nameValueLower);
-
-  // const nameValueLower = new Student(nameValue, genderValue, ageValue, 'Maths');
-  // console.log(nameValueLower.study());
-
-  // jack works
-  // let jack = new Student('Jack', 'male', '55', 'Physics');
-  // console.log(jack.study());
 
   var studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
   students.push(studentObj);
-  // let studentStudy = studentObj.study();
-  console.log(studentObj);
   printStatement(studentObj);
 };
-
-// this IIFE works
-(function () {
-  var tim = new Student('Tim', 'male', '19', 'Economics');
-  // console.log(tim.study());
-})();
-
-console.log(students);
 
 wswForm.addEventListener('submit', makeStudent);
