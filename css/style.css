@@ -5912,3 +5912,7 @@ h3 {
 .wsw__students {
   list-style-type: none;
 }
+
+.separator {
+  color: #adadad;
+}

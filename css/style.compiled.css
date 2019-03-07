@@ -5672,19 +5672,18 @@ body {
 
 .site-header {
   padding: 2rem;
-  background-color: bisque;
+  background-color: linen;
   margin-bottom: 3rem;
 }
 
 @media only screen and (min-width: 768px) {
   .site-header {
     padding: 4rem 2rem;
-    background-color: linen;
   }
 }
 
 h1 {
-  color: #0d9914;
+  color: #2e1ba6;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -5716,6 +5715,24 @@ h2 {
 
 @media only screen and (min-width: 1200px) {
   h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h3 {
     font-size: 2rem;
   }
 }
@@ -5807,4 +5824,95 @@ h2 {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+/*----------------------- Who Studys What Styles ------------------------------ */
+.wsw-wrap {
+  background-color: aliceblue;
+  padding: 3rem 0 10rem 0;
+}
+
+.wsw {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.wsw__label {
+  font-size: 20px;
+  display: block;
+  padding: 0 0 4px 4px;
+}
+
+.wsw__input {
+  margin-bottom: 16px;
+  padding: 8px;
+  font-size: 20px;
+  color: #0b0728;
+  border-radius: 5px;
+  border: 1px solid #8c899c;
+  width: 90vw;
+}
+
+@media only screen and (min-width: 768px) {
+  .wsw__input {
+    width: 50vw;
+  }
+}
+
+.wsw__input:focus {
+  outline: 3px solid #2e1ba6;
+  border-color: transparent;
+}
+
+.wsw__button {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px 24px;
+  background-color: #2e1ba6;
+  border: 1px solid #2e1ba6;
+  color: #fafafa;
+  border-radius: 5px;
+  width: 90vw;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .wsw__button {
+    width: 50vw;
+  }
+}
+
+.wsw__button:focus {
+  outline: 2px dotted #2e1ba6;
+  outline-offset: 4px;
+}
+
+.wsw__button::-moz-focus-inner {
+  border: 0;
+}
+
+.wsw__button:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.wsw__output-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.wsw__output-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.wsw__students {
+  list-style-type: none;
+}
+
+.separator {
+  color: #adadad;
 }

@@ -47,7 +47,7 @@ const showStudents = () => {
   for (let student of students) {
     studentCount++;
     let li = document.createElement('li');
-    li.innerHTML = `${student.name} | ${student.gender} | ${student.age} | ${student.subject}`;
+    li.innerHTML = `${student.name} <span class="separator">|</span> ${student.gender} <span class="separator">|</span> ${student.age} <span class="separator">|</span> ${student.subject}`;
     frag.appendChild(li);
   }
   studentCountContainer.innerHTML = `Number of students: ${studentCount}`;

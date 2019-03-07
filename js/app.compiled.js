@@ -84,7 +84,7 @@ var showStudents = function showStudents() {
 
       studentCount++;
       var li = document.createElement('li');
-      li.innerHTML = student.name + ' | ' + student.gender + ' | ' + student.age + ' | ' + student.subject;
+      li.innerHTML = student.name + ' <span class="separator">|</span> ' + student.gender + ' <span class="separator">|</span> ' + student.age + ' <span class="separator">|</span> ' + student.subject;
       frag.appendChild(li);
     }
   } catch (err) {
