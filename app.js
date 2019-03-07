@@ -5,6 +5,7 @@ const inputName = document.getElementById('wsw-name');
 const inputGender = document.getElementById('wsw-gender');
 const inputAge = document.getElementById('wsw-age');
 const inputSubject = document.getElementById('wsw-subject');
+const formFields = document.querySelectorAll('.wsw__input');
 const statementContainer = document.getElementById('wsw-statement');
 const studentCountContainer = document.getElementById('wsw-student-count');
 const studentList = document.getElementById('wsw-students');
@@ -46,17 +47,22 @@ const showStudents = () => {
   for (let student of students) {
     studentCount++;
     let li = document.createElement('li');
-    li.innerHTML = `${student.name} ${student.gender} ${student.age}`;
+    li.innerHTML = `${student.name} | ${student.gender} | ${student.age} | ${student.subject}`;
     frag.appendChild(li);
   }
-  studentCountContainer.innerHTML = studentCount;
+  studentCountContainer.innerHTML = `Number of students: ${studentCount}`;
   studentList.appendChild(frag);
 };
 
 const printStatement = student => {
   statementContainer.innerHTML = student.study();
-
   showStudents();
+};
+
+const clearFields = () => {
+  formFields.forEach(field => {
+    field.value = '';
+  });
 };
 
 const makeStudent = e => {
@@ -65,11 +71,12 @@ const makeStudent = e => {
   const genderValue = inputGender.value;
   const ageValue = inputAge.value;
   const subjectValue = inputSubject.value;
-  const nameValueLower = nameValue.toLowerCase();
+  // const nameValueLower = nameValue.toLowerCase();
 
   let studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
   students.push(studentObj);
   printStatement(studentObj);
+  clearFields();
 };
 
 wswForm.addEventListener('submit', makeStudent);

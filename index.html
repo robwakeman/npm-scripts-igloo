@@ -39,35 +39,44 @@
         </p>
       </div>
     </div>
-
-    <h3>Who Studies What?</h3>
-    <div class="wsw">
-      <form class="wsw__form" id="wsw-form">
-        <div class="wsw__group">
-          <label class="wsw__label wsw__name-label" for="wsw-name">Name</label>
-          <input class="wsw__input wsw__name-input" id="wsw-name" type="text" placeholder="e.g. Jane Baker" pattern="^[a-zA-Z]{0,20}$" />
+    <div class="wsw-wrap">
+      <h3>Who Studies What?</h3>
+      <div class="wsw">
+        <form class="wsw__form" id="wsw-form">
+          <div class="wsw__group">
+            <label class="wsw__label wsw__name-label" for="wsw-name">Name</label>
+            <input class="wsw__input wsw__name-input" id="wsw-name" type="text" placeholder="e.g. Jane Baker" pattern="^[a-zA-Z]{0,20}$" />
+          </div>
+          <div class="wsw__group">
+            <label class="wsw__label wsw__gender-label" for="wsw-gender">Gender</label>
+            <input class="wsw__input wsw__gender-input" id="wsw-gender" type="text" placeholder="e.g. female" />
+          </div>
+          <div class="wsw__group">
+            <label class="wsw__label wsw__age-label" for="wsw-age">Age</label>
+            <input class="wsw__input wsw__age-input" id="wsw-age" type="text" placeholder="e.g. 20" />
+          </div>
+          <div class="wsw__group">
+            <label class="wsw__label wsw__subject-label" for="wsw-subject">Subject</label>
+            <input class="wsw__input wsw__subject-input" id="wsw-subject" type="text" placeholder="e.g. Maths" />
+          </div>
+          <div class="wsw__group">
+            <button class="wsw__button" type="submit">Make statement</button>
+          </div>
+        </form>
+      </div>
+      <div class="wsw__output-wrap">
+        <div class="wsw__output">
+          <p class="wsw__output-box wsw__statement" id="wsw-statement">Student statement will appear here</p>
+          <p class="wsw__output-box wsw__student-count" id="wsw-student-count">Student count will appear here</p>
+          <ul class="wsw__output-box wsw__students" id="wsw-students">
+            <li>Student list will appear here</li>
+            <!-- <li>Jo | female | 49 | Art</li>
+            <li>Rob | male | 56 | Maths</li>
+            <li>Mark | male | 33 | Geography</li> -->
+          </ul>
         </div>
-        <div class="wsw__group">
-          <label class="wsw__label wsw__gender-label" for="wsw-gender">Gender</label>
-          <input class="wsw__input wsw__gender-input" id="wsw-gender" type="text" placeholder="e.g. female" />
-        </div>
-        <div class="wsw__group">
-          <label class="wsw__label wsw__age-label" for="wsw-age">Age</label>
-          <input class="wsw__input wsw__age-input" id="wsw-age" type="text" placeholder="e.g. 20" />
-        </div>
-        <div class="wsw__group">
-          <label class="wsw__label wsw__subject-label" for="wsw-subject">Subject</label>
-          <input class="wsw__input wsw__subject-input" id="wsw-subject" type="text" placeholder="e.g. Maths" />
-        </div>
-        <div class="wsw__group">
-          <button class="wsw__button" type="submit">Make statement</button>
-        </div>
-        <p class="wsw__statement" id="wsw-statement">Student statement will appear here</p>
-        <p class="wsw__students" id="wsw-student-count">Student list will appear here</p>
-        <ul class="wsw-students" id="wsw-students"></ul>
-      </form>
+      </div>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>

@@ -15,6 +15,7 @@ var inputName = document.getElementById('wsw-name');
 var inputGender = document.getElementById('wsw-gender');
 var inputAge = document.getElementById('wsw-age');
 var inputSubject = document.getElementById('wsw-subject');
+var formFields = document.querySelectorAll('.wsw__input');
 var statementContainer = document.getElementById('wsw-statement');
 var studentCountContainer = document.getElementById('wsw-student-count');
 var studentList = document.getElementById('wsw-students');
@@ -83,7 +84,7 @@ var showStudents = function showStudents() {
 
       studentCount++;
       var li = document.createElement('li');
-      li.innerHTML = student.name + ' ' + student.gender + ' ' + student.age;
+      li.innerHTML = student.name + ' | ' + student.gender + ' | ' + student.age + ' | ' + student.subject;
       frag.appendChild(li);
     }
   } catch (err) {
@@ -101,14 +102,19 @@ var showStudents = function showStudents() {
     }
   }
 
-  studentCountContainer.innerHTML = studentCount;
+  studentCountContainer.innerHTML = 'Number of students: ' + studentCount;
   studentList.appendChild(frag);
 };
 
 var printStatement = function printStatement(student) {
   statementContainer.innerHTML = student.study();
-
   showStudents();
+};
+
+var clearFields = function clearFields() {
+  formFields.forEach(function (field) {
+    field.value = '';
+  });
 };
 
 var makeStudent = function makeStudent(e) {
@@ -117,11 +123,12 @@ var makeStudent = function makeStudent(e) {
   var genderValue = inputGender.value;
   var ageValue = inputAge.value;
   var subjectValue = inputSubject.value;
-  var nameValueLower = nameValue.toLowerCase();
+  // const nameValueLower = nameValue.toLowerCase();
 
   var studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
   students.push(studentObj);
   printStatement(studentObj);
+  clearFields();
 };
 
 wswForm.addEventListener('submit', makeStudent);

@@ -4,7 +4,8 @@
 
 $color-primary: rgb(46, 27, 166);
 $color-accent: #f541dd;
-$color-background: linen;
+$color-background-header: linen;
+$color-background-other: aliceblue;
 
 /* Globally enable grid prefixes */
 /* autoprefixer grid: on */
@@ -33,7 +34,7 @@ body {
 
 .site-header {
   padding: 2rem;
-  background-color: $color-background;
+  background-color: $color-background-header;
   margin-bottom: 3rem;
   @include mq('medium') {
     padding: 4rem 2rem;
@@ -134,7 +135,7 @@ h3 {
 }
 
 .features__text {
-  background-color: aliceblue;
+  background-color: $color-background-other;
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 5px 5px 5px 0px rgba(187, 187, 187, 1);
@@ -158,13 +159,20 @@ h3 {
 
 /*----------------------- Who Studys What Styles ------------------------------ */
 
+.wsw-wrap {
+  background-color: $color-background-other;
+  padding: 3rem 0 10rem 0;
+}
+
 .wsw {
   display: flex;
   justify-content: center;
-  height: 70vh;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .wsw__label {
+  font-size: 20px;
   display: block;
   padding: 0 0 4px 4px;
 }
@@ -174,7 +182,7 @@ h3 {
   padding: 8px;
   font-size: 20px;
   color: #0b0728;
-  border-radius: 4px;
+  border-radius: 5px;
   border: 1px solid #8c899c;
   width: 90vw;
   @include mq('medium') {
@@ -193,7 +201,7 @@ h3 {
   background-color: $color-primary;
   border: 1px solid $color-primary;
   color: #fafafa;
-  border-radius: 4px;
+  border-radius: 5px;
   width: 90vw;
   @include mq('medium') {
     width: 50vw;
@@ -209,4 +217,20 @@ h3 {
   &:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+}
+
+.wsw__output-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.wsw__output-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.wsw__students {
+  list-style-type: none;
 }
