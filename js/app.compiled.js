@@ -10,15 +10,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 // who studies what
 
-var wswForm = document.getElementById('wsw-form');
+var wswForm = document.getElementById('wsw');
 var inputName = document.getElementById('wsw-name');
 var inputGender = document.getElementById('wsw-gender');
 var inputAge = document.getElementById('wsw-age');
 var inputSubject = document.getElementById('wsw-subject');
 var formFields = document.querySelectorAll('.wsw__input');
-var statementContainer = document.getElementById('wsw-statement');
-var studentCountContainer = document.getElementById('wsw-student-count');
-var studentList = document.getElementById('wsw-students');
+var statementContainer = document.getElementById('student-output-statement');
+var studentCountContainer = document.getElementById('student-output-count');
+var studentList = document.getElementById('student-output-students');
 
 var PersonClass = function () {
   function PersonClass(name, gender, age) {

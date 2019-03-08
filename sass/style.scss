@@ -164,7 +164,7 @@ h3 {
   padding: 3rem 0 10rem 0;
 }
 
-.wsw {
+.wsw-form-wrap {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
@@ -219,19 +219,19 @@ h3 {
   }
 }
 
-.wsw__output-wrap {
+.student-output-wrap {
   display: flex;
   justify-content: center;
 }
 
-.wsw__output-box {
+.student-output__box {
   background: white;
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
 
-.wsw__students {
+.student-output__students {
   list-style-type: none;
 }
 

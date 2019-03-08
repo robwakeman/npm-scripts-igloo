@@ -1,14 +1,14 @@
 // who studies what
 
-const wswForm = document.getElementById('wsw-form');
+const wswForm = document.getElementById('wsw');
 const inputName = document.getElementById('wsw-name');
 const inputGender = document.getElementById('wsw-gender');
 const inputAge = document.getElementById('wsw-age');
 const inputSubject = document.getElementById('wsw-subject');
 const formFields = document.querySelectorAll('.wsw__input');
-const statementContainer = document.getElementById('wsw-statement');
-const studentCountContainer = document.getElementById('wsw-student-count');
-const studentList = document.getElementById('wsw-students');
+const statementContainer = document.getElementById('student-output-statement');
+const studentCountContainer = document.getElementById('student-output-count');
+const studentList = document.getElementById('student-output-students');
 
 class PersonClass {
   constructor(name, gender, age) {
