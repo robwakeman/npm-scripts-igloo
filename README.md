@@ -1,6 +1,6 @@
 # npm-scripts-igloo
 
-A build process using npm scripts with Sass and Babel.
+Student list generator, CSS animations, npm scripts build process with Sass and Babel.
 
 Igloo is just a silly name, because I've thrown in an igloo icon from Font Awesome.
 
