@@ -57,7 +57,7 @@ var Student = function (_PersonClass) {
   _createClass(Student, [{
     key: 'study',
     value: function study() {
-      return this.name + ', aged ' + this.age + ', is studying ' + this.subject;
+      return this.name + ' is aged ' + this.age + '. ' + (this.gender === 'male' ? 'He' : 'She') + ' is studying ' + this.subject + '.';
     }
   }]);
 
