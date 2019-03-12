@@ -177,45 +177,47 @@ h3 {
   padding: 0 0 4px 4px;
 }
 
-.wsw__input {
-  margin-bottom: 16px;
-  padding: 8px;
-  font-size: 20px;
-  color: #0b0728;
-  border-radius: 5px;
-  border: 1px solid #8c899c;
-  width: 90vw;
-  @include mq('medium') {
-    width: 50vw;
+.wsw {
+  &__input {
+    margin-bottom: 16px;
+    padding: 8px;
+    font-size: 20px;
+    color: #0b0728;
+    border-radius: 5px;
+    border: 1px solid #8c899c;
+    width: 90vw;
+    @include mq('medium') {
+      width: 50vw;
+    }
+    &:focus {
+      outline: 3px solid $color-primary;
+      border-color: transparent;
+    }
   }
-  &:focus {
-    outline: 3px solid $color-primary;
-    border-color: transparent;
-  }
-}
 
-.wsw__button {
-  font-size: 24px;
-  font-weight: bold;
-  padding: 8px 24px;
-  background-color: $color-primary;
-  border: 1px solid $color-primary;
-  color: #fafafa;
-  border-radius: 5px;
-  width: 90vw;
-  @include mq('medium') {
-    width: 50vw;
-  }
-  cursor: pointer;
-  &:focus {
-    outline: 2px dotted $color-primary;
-    outline-offset: 4px;
-  }
-  &::-moz-focus-inner {
-    border: 0;
-  }
-  &:hover {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  &__button {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 24px;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    color: #fafafa;
+    border-radius: 5px;
+    width: 90vw;
+    cursor: pointer;
+    @include mq('medium') {
+      width: 50vw;
+    }
+    &:focus {
+      outline: 2px dotted $color-primary;
+      outline-offset: 4px;
+    }
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
   }
 }
 
