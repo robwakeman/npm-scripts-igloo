@@ -226,15 +226,17 @@ h3 {
   justify-content: center;
 }
 
-.student-output__box {
-  background: white;
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
+.student-output {
+  &__box {
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
 
-.student-output__students {
-  list-style-type: none;
+  &__students {
+    list-style-type: none;
+  }
 }
 
 .separator {
