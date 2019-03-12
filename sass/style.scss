@@ -78,11 +78,14 @@ h3 {
   }
 }
 
+.container {
+  width: 80%;
+  margin: 0 auto 4rem;
+}
+
 /*----------------------- Features Styles ------------------------------ */
 
 .features {
-  width: 80%;
-  margin: 0 auto 4rem;
   animation: slide-in 1s ease-in-out forwards;
   transform-origin: left;
   display: flex;

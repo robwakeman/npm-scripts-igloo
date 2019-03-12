@@ -5737,10 +5737,13 @@ h3 {
   }
 }
 
-/*----------------------- Features Styles ------------------------------ */
-.features {
+.container {
   width: 80%;
   margin: 0 auto 4rem;
+}
+
+/*----------------------- Features Styles ------------------------------ */
+.features {
   animation: slide-in 1s ease-in-out forwards;
   transform-origin: left;
   display: flex;
@@ -5907,6 +5910,13 @@ h3 {
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 1rem;
+  box-shadow: 5px 5px 5px 0px #bbbbbb;
+}
+
+.student-output__statement {
+  color: #2e1ba6;
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
 .student-output__students {

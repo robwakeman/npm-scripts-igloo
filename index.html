@@ -13,7 +13,7 @@
       <h1>npm-scripts-igloo</h1>
       <h2>A build process using npm scripts with Sass compilation</h2>
     </header>
-    <div class="features">
+    <div class="container features">
       <div class="features__item">
         <div class="features__icon"><span class="igloo"></span></div>
         <p class="features__text">
@@ -40,40 +40,42 @@
       </div>
     </div>
     <div class="wsw-wrap">
-      <h3>Who Studies What?</h3>
-      <div class="wsw-form-wrap">
-        <form class="wsw" id="wsw">
-          <div class="wsw__field-group">
-            <label class="wsw__label wsw__label-name" for="wsw-name">Name</label>
-            <input class="wsw__input wsw__input-name" id="wsw-name" type="text" placeholder="e.g. Jane" pattern="^[a-zA-Z]{0,20}$" />
-          </div>
-          <div class="wsw__field-group">
-            <label class="wsw__label wsw__label-gender" for="wsw-gender">Gender</label>
-            <input class="wsw__input wsw__input-gender" id="wsw-gender" type="text" placeholder="e.g. female" />
-          </div>
-          <div class="wsw__field-group">
-            <label class="wsw__label wsw__label-age" for="wsw-age">Age</label>
-            <input class="wsw__input wsw__input-age" id="wsw-age" type="text" placeholder="e.g. 20" />
-          </div>
-          <div class="wsw__field-group">
-            <label class="wsw__label wsw__label-subject" for="wsw-subject">Subject</label>
-            <input class="wsw__input wsw__input-subject" id="wsw-subject" type="text" placeholder="e.g. Maths" />
-          </div>
-          <div class="wsw__group">
-            <button class="wsw__button" type="submit">Generate student data</button>
-          </div>
-        </form>
-      </div>
-      <div class="student-output-wrap">
-        <div class="student-output">
-          <p class="student-output__box student-output__statement" id="student-output-statement">Student statement will appear here</p>
-          <p class="student-output__box student-output__count" id="student-output-count">Student count will appear here</p>
-          <ul class="student-output__box student-output__students" id="student-output-students">
-            <li>Student list will appear here</li>
-            <!-- <li>Jo | female | 27 | Art</li>
+      <div class="container">
+        <h3>Who Studies What?</h3>
+        <div class="wsw-form-wrap">
+          <form class="wsw" id="wsw">
+            <div class="wsw__field-group">
+              <label class="wsw__label wsw__label-name" for="wsw-name">Name</label>
+              <input class="wsw__input wsw__input-name" id="wsw-name" type="text" placeholder="e.g. Jane" pattern="^[a-zA-Z]{0,20}$" />
+            </div>
+            <div class="wsw__field-group">
+              <label class="wsw__label wsw__label-gender" for="wsw-gender">Gender</label>
+              <input class="wsw__input wsw__input-gender" id="wsw-gender" type="text" placeholder="e.g. female" />
+            </div>
+            <div class="wsw__field-group">
+              <label class="wsw__label wsw__label-age" for="wsw-age">Age</label>
+              <input class="wsw__input wsw__input-age" id="wsw-age" type="text" placeholder="e.g. 20" />
+            </div>
+            <div class="wsw__field-group">
+              <label class="wsw__label wsw__label-subject" for="wsw-subject">Subject</label>
+              <input class="wsw__input wsw__input-subject" id="wsw-subject" type="text" placeholder="e.g. Maths" />
+            </div>
+            <div class="wsw__group">
+              <button class="wsw__button" type="submit">Generate student data</button>
+            </div>
+          </form>
+        </div>
+        <div class="student-output-wrap">
+          <div class="student-output">
+            <p class="student-output__box student-output__statement" id="student-output-statement">Student statement will appear here</p>
+            <p class="student-output__box student-output__count" id="student-output-count">Student count will appear here</p>
+            <ul class="student-output__box student-output__students" id="student-output-students">
+              <li>Student list will appear here</li>
+              <!-- <li>Jo | female | 27 | Art</li>
             <li>Rob | male | 31 | Maths</li>
             <li>Mark | male | 33 | Geography</li> -->
-          </ul>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
