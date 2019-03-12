@@ -175,7 +175,7 @@ h3 {
 }
 
 .wsw__label {
-  font-size: 20px;
+  font-size: 1.25rem;
   display: block;
   padding: 0 0 4px 4px;
 }
@@ -184,7 +184,7 @@ h3 {
   &__input {
     margin-bottom: 16px;
     padding: 8px;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: #0b0728;
     border-radius: 5px;
     border: 1px solid #8c899c;
@@ -199,7 +199,10 @@ h3 {
   }
 
   &__button {
-    font-size: 24px;
+    font-size: 1.25rem;
+    @include mq('medium') {
+      font-size: 1.5rem;
+    }
     font-weight: bold;
     padding: 8px 24px;
     background-color: $color-primary;
@@ -241,7 +244,10 @@ h3 {
   &__statement {
     color: $color-primary;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    @include mq('medium') {
+      font-size: 1.3rem;
+    }
   }
 
   &__students {
