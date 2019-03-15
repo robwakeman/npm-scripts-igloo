@@ -235,10 +235,17 @@ h3 {
 .student-output {
   &__box {
     background: white;
-    padding: 1rem;
+    padding: 0;
     border-radius: 4px;
     margin-bottom: 1rem;
     box-shadow: 5px 5px 5px 0px rgba(187, 187, 187, 1);
+    max-width: 0;
+    transition: max-width 1s linear;
+
+    &.withcontent {
+      max-width: 1000px;
+      padding: 1rem;
+    }
   }
 
   &__statement {

@@ -19,6 +19,7 @@ var formFields = document.querySelectorAll('.wsw__input');
 var statementContainer = document.getElementById('student-output-statement');
 var studentCountContainer = document.getElementById('student-output-count');
 var studentList = document.getElementById('student-output-students');
+var studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
 var PersonClass = function () {
   function PersonClass(name, gender, age) {
@@ -109,6 +110,9 @@ var showStudents = function showStudents() {
 var printStatement = function printStatement(student) {
   statementContainer.innerHTML = student.study();
   showStudents();
+  studentOutputBoxes.forEach(function (box) {
+    box.classList.add('withcontent');
+  });
 };
 
 var clearFields = function clearFields() {

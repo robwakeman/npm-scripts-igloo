@@ -9,6 +9,7 @@ const formFields = document.querySelectorAll('.wsw__input');
 const statementContainer = document.getElementById('student-output-statement');
 const studentCountContainer = document.getElementById('student-output-count');
 const studentList = document.getElementById('student-output-students');
+const studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
 class PersonClass {
   constructor(name, gender, age) {
@@ -57,6 +58,9 @@ const showStudents = () => {
 const printStatement = student => {
   statementContainer.innerHTML = student.study();
   showStudents();
+  studentOutputBoxes.forEach(box => {
+    box.classList.add('withcontent');
+  });
 };
 
 const clearFields = () => {
