@@ -9,6 +9,7 @@ const formFields = document.querySelectorAll('.wsw__input');
 const statementContainer = document.getElementById('student-output-statement');
 const studentCountContainer = document.getElementById('student-output-count');
 const studentList = document.getElementById('student-output-students');
+const studentListTable = document.getElementById('student-output-students-table');
 const studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
 class PersonClass {
@@ -38,21 +39,26 @@ class Student extends PersonClass {
 const students = [];
 
 const showStudents = () => {
-  console.log(students);
+  console.log('students', students);
   let studentCount = 0;
   // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
   while (studentList.firstChild) {
     studentList.removeChild(studentList.firstChild);
   }
+
   let frag = document.createDocumentFragment();
   for (let student of students) {
     studentCount++;
     let li = document.createElement('li');
     li.innerHTML = `${student.name} <span class="separator">|</span> ${student.gender} <span class="separator">|</span> ${student.age} <span class="separator">|</span> ${student.subject}`;
     frag.appendChild(li);
+    /* let tr = document.createElement('tr');
+    tr.innerHTML = `<td> ${student.name} </td><td> ${student.gender} </td><td> ${student.age} </td><td> ${student.subject} </td>`;
+    frag.appendChild(tr); */
   }
   studentCountContainer.innerHTML = `Number of students: ${studentCount}`;
   studentList.appendChild(frag);
+  // studentListTable.appendChild(frag);
 };
 
 const printStatement = student => {
@@ -63,6 +69,22 @@ const printStatement = student => {
   });
 };
 
+const addTableRow = (...args) => {
+  // insertRow() into studentListTable
+  // Insert a row at the end of the table
+  let newRow = studentListTable.insertRow(-1);
+  let newCell;
+  let newText;
+  for (let i = 0; i < args.length; i++) {
+    // Insert a cell in the row
+    newCell = newRow.insertCell(i);
+
+    // Append a text node to the cell
+    newText = document.createTextNode(args[i]);
+    newCell.appendChild(newText);
+  }
+};
+
 const clearFields = () => {
   formFields.forEach(field => {
     field.value = '';
@@ -71,14 +93,15 @@ const clearFields = () => {
 
 const makeStudent = e => {
   e.preventDefault();
-  const nameValue = inputName.value;
-  const genderValue = inputGender.value;
-  const ageValue = inputAge.value;
-  const subjectValue = inputSubject.value;
+  const name = inputName.value;
+  const gender = inputGender.value;
+  const age = inputAge.value;
+  const subject = inputSubject.value;
 
-  let studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
-  students.push(studentObj);
+  let studentObj = new Student(name, gender, age, subject);
+  students.push(studentObj); // studentObj to be used for a future use
   printStatement(studentObj);
+  addTableRow(name, gender, age, subject);
   clearFields();
 };
 

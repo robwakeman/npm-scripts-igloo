@@ -19,6 +19,7 @@ var formFields = document.querySelectorAll('.wsw__input');
 var statementContainer = document.getElementById('student-output-statement');
 var studentCountContainer = document.getElementById('student-output-count');
 var studentList = document.getElementById('student-output-students');
+var studentListTable = document.getElementById('student-output-students-table');
 var studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
 var PersonClass = function () {
@@ -68,12 +69,13 @@ var Student = function (_PersonClass) {
 var students = [];
 
 var showStudents = function showStudents() {
-  console.log(students);
+  console.log('students', students);
   var studentCount = 0;
   // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
   while (studentList.firstChild) {
     studentList.removeChild(studentList.firstChild);
   }
+
   var frag = document.createDocumentFragment();
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
@@ -87,6 +89,9 @@ var showStudents = function showStudents() {
       var li = document.createElement('li');
       li.innerHTML = student.name + ' <span class="separator">|</span> ' + student.gender + ' <span class="separator">|</span> ' + student.age + ' <span class="separator">|</span> ' + student.subject;
       frag.appendChild(li);
+      /* let tr = document.createElement('tr');
+      tr.innerHTML = `<td> ${student.name} </td><td> ${student.gender} </td><td> ${student.age} </td><td> ${student.subject} </td>`;
+      frag.appendChild(tr); */
     }
   } catch (err) {
     _didIteratorError = true;
@@ -105,6 +110,7 @@ var showStudents = function showStudents() {
 
   studentCountContainer.innerHTML = 'Number of students: ' + studentCount;
   studentList.appendChild(frag);
+  // studentListTable.appendChild(frag);
 };
 
 var printStatement = function printStatement(student) {
@@ -115,6 +121,26 @@ var printStatement = function printStatement(student) {
   });
 };
 
+var addTableRow = function addTableRow() {
+  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  // insertRow() into studentListTable
+  // Insert a row at the end of the table
+  var newRow = studentListTable.insertRow(-1);
+  var newCell = void 0;
+  var newText = void 0;
+  for (var i = 0; i < args.length; i++) {
+    // Insert a cell in the row
+    newCell = newRow.insertCell(i);
+
+    // Append a text node to the cell
+    newText = document.createTextNode(args[i]);
+    newCell.appendChild(newText);
+  }
+};
+
 var clearFields = function clearFields() {
   formFields.forEach(function (field) {
     field.value = '';
@@ -123,15 +149,15 @@ var clearFields = function clearFields() {
 
 var makeStudent = function makeStudent(e) {
   e.preventDefault();
-  var nameValue = inputName.value;
-  var genderValue = inputGender.value;
-  var ageValue = inputAge.value;
-  var subjectValue = inputSubject.value;
-  // const nameValueLower = nameValue.toLowerCase();
+  var name = inputName.value;
+  var gender = inputGender.value;
+  var age = inputAge.value;
+  var subject = inputSubject.value;
 
-  var studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
-  students.push(studentObj);
+  var studentObj = new Student(name, gender, age, subject);
+  students.push(studentObj); // studentObj to be used for a future use
   printStatement(studentObj);
+  addTableRow(name, gender, age, subject);
   clearFields();
 };
 
