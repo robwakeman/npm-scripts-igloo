@@ -127,7 +127,6 @@ var makeStudent = function makeStudent(e) {
   var genderValue = inputGender.value;
   var ageValue = inputAge.value;
   var subjectValue = inputSubject.value;
-  // const nameValueLower = nameValue.toLowerCase();
 
   var studentObj = new Student(nameValue, genderValue, ageValue, subjectValue);
   students.push(studentObj);
