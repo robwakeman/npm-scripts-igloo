@@ -4,8 +4,10 @@
 
 $color-primary: rgb(46, 27, 166);
 $color-accent: #f541dd;
+$color-text: #303030;
 $color-background-header: linen;
 $color-background-other: aliceblue;
+$color-dark-brown: #d49f5a;
 
 /* Globally enable grid prefixes */
 /* autoprefixer grid: on */
@@ -30,6 +32,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 100%;
   line-height: 1.7;
+  color: $color-text;
 }
 
 .site-header {
@@ -233,12 +236,16 @@ h3 {
 }
 
 .student-output {
+  & p:last-of-type {
+    margin-bottom: 3rem;
+  }
+
   &__box {
     background: white;
     padding: 0;
     border-radius: 4px;
     margin-bottom: 1rem;
-    box-shadow: 5px 5px 5px 0px rgba(187, 187, 187, 1);
+    box-shadow: 5px 5px 5px 0px rgb(48, 20, 20);
     max-width: 0;
     transition: max-width 1s linear;
 
@@ -248,7 +255,8 @@ h3 {
     }
   }
 
-  &__statement {
+  &__statement,
+  &__count {
     color: $color-primary;
     font-weight: bold;
     font-size: 1.2rem;
@@ -273,20 +281,20 @@ h3 {
   // height: 320px;
   // margin: auto;
   // max-width: 600px;
-  padding: 5px;
+  padding: 1rem;
   width: 100%;
 
   & th {
-    color: #d5dde5;
-    background: #1b1e24;
+    color: white;
+    background: $color-dark-brown;
     border-bottom: 4px solid #9ea7af;
-    border-right: 1px solid #343a45;
-    font-size: 23px;
-    font-weight: 100;
-    padding: 24px;
-    text-align: left;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    vertical-align: middle;
+    border-right: 1px solid darken($color-dark-brown, 20%);
+    font-size: 1.2rem;
+    // font-weight: 100;
+    padding: 1rem;
+    // text-align: left;
+    // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    // vertical-align: middle;
   }
 
   & th:first-child {
@@ -301,12 +309,12 @@ h3 {
   & tr {
     border-top: 1px solid #c1c3d1;
     border-bottom: 1px solid #c1c3d1;
-    color: #666b85;
+    // color: #666b85;
   }
 
   & tr:hover td {
-    background: #4e5066;
-    color: #ffffff;
+    background: $color-background-header;
+    color: $color-text;
     border-top: 1px solid #22262e;
   }
 
@@ -319,11 +327,11 @@ h3 {
   }
 
   & tr:nth-child(odd) td {
-    background: #ebebeb;
+    background: #f7f7f7;
   }
 
   & tr:nth-child(odd):hover td {
-    background: #4e5066;
+    background: $color-background-header;
   }
   & tr:last-child td:first-child {
     border-bottom-left-radius: 3px;
@@ -335,11 +343,11 @@ h3 {
 
   & td {
     background: #ffffff;
-    padding: 20px;
-    text-align: left;
+    padding: 1rem;
+    // text-align: left;
     vertical-align: middle;
-    font-weight: 300;
-    font-size: 18px;
+    // font-weight: 300;
+    // font-size: 18px;
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
     border-right: 1px solid #c1c3d1;
   }
