@@ -75,7 +75,6 @@ const printStatement = student => {
 };
 
 const addTableRow = (...args) => {
-  // insertRow() into studentListTable
   // Insert a row at the end of the table
   let newRow = studentListTable.insertRow(-1);
   let newCell;

@@ -153,7 +153,6 @@ var addTableRow = function addTableRow() {
     args[_key] = arguments[_key];
   }
 
-  // insertRow() into studentListTable
   // Insert a row at the end of the table
   var newRow = studentListTable.insertRow(-1);
   var newCell = void 0;
