@@ -70,7 +70,6 @@ var students = [];
 var studentCount = 0;
 
 var showStudents = function showStudents() {
-  // console.log('students in showStudents', students);
   // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
   while (studentList.firstChild) {
     studentList.removeChild(studentList.firstChild);
@@ -108,12 +107,10 @@ var showStudents = function showStudents() {
   }
 
   studentList.appendChild(frag);
-  // studentListTable.appendChild(frag);
 };
 
 var showStudentCount = function showStudentCount() {
   studentCount = 0;
-  // console.log('students in showStudentCount', students);
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
   var _iteratorError2 = undefined;
