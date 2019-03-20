@@ -70,8 +70,7 @@ var students = [];
 var studentCount = 0;
 
 var showStudents = function showStudents() {
-  console.log('students in showStudents', students);
-  // let studentCount = 0;
+  // console.log('students in showStudents', students);
   // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
   while (studentList.firstChild) {
     studentList.removeChild(studentList.firstChild);
@@ -86,7 +85,6 @@ var showStudents = function showStudents() {
     for (var _iterator = students[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var student = _step.value;
 
-      studentCount++;
       var li = document.createElement('li');
       li.innerHTML = student.name + ' <span class="separator">|</span> ' + student.gender + ' <span class="separator">|</span> ' + student.age + ' <span class="separator">|</span> ' + student.subject;
       frag.appendChild(li);
@@ -109,13 +107,13 @@ var showStudents = function showStudents() {
     }
   }
 
-  studentCountContainer.innerHTML = 'Number of students: ' + studentCount;
   studentList.appendChild(frag);
   // studentListTable.appendChild(frag);
 };
 
 var showStudentCount = function showStudentCount() {
-  console.log('students in showStudentCount', students);
+  studentCount = 0;
+  // console.log('students in showStudentCount', students);
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
   var _iteratorError2 = undefined;
