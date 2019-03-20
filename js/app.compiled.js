@@ -18,7 +18,6 @@ var inputSubject = document.getElementById('wsw-subject');
 var formFields = document.querySelectorAll('.wsw__input');
 var statementContainer = document.getElementById('student-output-statement');
 var studentCountContainer = document.getElementById('student-output-count');
-var studentList = document.getElementById('student-output-students');
 var studentListTable = document.getElementById('student-output-students-table');
 var studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
@@ -69,13 +68,8 @@ var Student = function (_PersonClass) {
 var students = [];
 var studentCount = 0;
 
-var showStudents = function showStudents() {
-  // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
-  while (studentList.firstChild) {
-    studentList.removeChild(studentList.firstChild);
-  }
-
-  var frag = document.createDocumentFragment();
+var showStudentCount = function showStudentCount() {
+  studentCount = 0;
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -84,12 +78,7 @@ var showStudents = function showStudents() {
     for (var _iterator = students[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var student = _step.value;
 
-      var li = document.createElement('li');
-      li.innerHTML = student.name + ' <span class="separator">|</span> ' + student.gender + ' <span class="separator">|</span> ' + student.age + ' <span class="separator">|</span> ' + student.subject;
-      frag.appendChild(li);
-      /* let tr = document.createElement('tr');
-      tr.innerHTML = `<td> ${student.name} </td><td> ${student.gender} </td><td> ${student.age} </td><td> ${student.subject} </td>`;
-      frag.appendChild(tr); */
+      studentCount++;
     }
   } catch (err) {
     _didIteratorError = true;
@@ -106,42 +95,11 @@ var showStudents = function showStudents() {
     }
   }
 
-  studentList.appendChild(frag);
-};
-
-var showStudentCount = function showStudentCount() {
-  studentCount = 0;
-  var _iteratorNormalCompletion2 = true;
-  var _didIteratorError2 = false;
-  var _iteratorError2 = undefined;
-
-  try {
-    for (var _iterator2 = students[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var student = _step2.value;
-
-      studentCount++;
-    }
-  } catch (err) {
-    _didIteratorError2 = true;
-    _iteratorError2 = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion2 && _iterator2.return) {
-        _iterator2.return();
-      }
-    } finally {
-      if (_didIteratorError2) {
-        throw _iteratorError2;
-      }
-    }
-  }
-
   studentCountContainer.innerHTML = 'Number of students: ' + studentCount;
 };
 
 var printStatement = function printStatement(student) {
   statementContainer.innerHTML = student.study();
-  showStudents();
   showStudentCount();
   studentOutputBoxes.forEach(function (box) {
     box.classList.add('withcontent');

@@ -8,7 +8,6 @@ const inputSubject = document.getElementById('wsw-subject');
 const formFields = document.querySelectorAll('.wsw__input');
 const statementContainer = document.getElementById('student-output-statement');
 const studentCountContainer = document.getElementById('student-output-count');
-const studentList = document.getElementById('student-output-students');
 const studentListTable = document.getElementById('student-output-students-table');
 const studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
@@ -39,24 +38,6 @@ class Student extends PersonClass {
 const students = [];
 let studentCount = 0;
 
-const showStudents = () => {
-  // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
-  while (studentList.firstChild) {
-    studentList.removeChild(studentList.firstChild);
-  }
-
-  let frag = document.createDocumentFragment();
-  for (let student of students) {
-    let li = document.createElement('li');
-    li.innerHTML = `${student.name} <span class="separator">|</span> ${student.gender} <span class="separator">|</span> ${student.age} <span class="separator">|</span> ${student.subject}`;
-    frag.appendChild(li);
-    /* let tr = document.createElement('tr');
-    tr.innerHTML = `<td> ${student.name} </td><td> ${student.gender} </td><td> ${student.age} </td><td> ${student.subject} </td>`;
-    frag.appendChild(tr); */
-  }
-  studentList.appendChild(frag);
-};
-
 const showStudentCount = () => {
   studentCount = 0;
   for (let student of students) {
@@ -67,7 +48,6 @@ const showStudentCount = () => {
 
 const printStatement = student => {
   statementContainer.innerHTML = student.study();
-  showStudents();
   showStudentCount();
   studentOutputBoxes.forEach(box => {
     box.classList.add('withcontent');
