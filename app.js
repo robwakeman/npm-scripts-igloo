@@ -37,10 +37,11 @@ class Student extends PersonClass {
 }
 
 const students = [];
+let studentCount = 0;
 
 const showStudents = () => {
-  console.log('students', students);
-  let studentCount = 0;
+  console.log('students in showStudents', students);
+  // let studentCount = 0;
   // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
   while (studentList.firstChild) {
     studentList.removeChild(studentList.firstChild);
@@ -61,9 +62,18 @@ const showStudents = () => {
   // studentListTable.appendChild(frag);
 };
 
+const showStudentCount = () => {
+  console.log('students in showStudentCount', students);
+  for (let student of students) {
+    studentCount++;
+  }
+  studentCountContainer.innerHTML = `Number of students: ${studentCount}`;
+};
+
 const printStatement = student => {
   statementContainer.innerHTML = student.study();
   showStudents();
+  showStudentCount();
   studentOutputBoxes.forEach(box => {
     box.classList.add('withcontent');
   });

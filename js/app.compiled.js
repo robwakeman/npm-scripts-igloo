@@ -67,10 +67,11 @@ var Student = function (_PersonClass) {
 }(PersonClass);
 
 var students = [];
+var studentCount = 0;
 
 var showStudents = function showStudents() {
-  console.log('students', students);
-  var studentCount = 0;
+  console.log('students in showStudents', students);
+  // let studentCount = 0;
   // remove all children of student list before adding the new fragment to avoid appending the fragment to the previous fragments
   while (studentList.firstChild) {
     studentList.removeChild(studentList.firstChild);
@@ -113,9 +114,40 @@ var showStudents = function showStudents() {
   // studentListTable.appendChild(frag);
 };
 
+var showStudentCount = function showStudentCount() {
+  console.log('students in showStudentCount', students);
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    for (var _iterator2 = students[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      var student = _step2.value;
+
+      studentCount++;
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
+
+  studentCountContainer.innerHTML = 'Number of students: ' + studentCount;
+};
+
 var printStatement = function printStatement(student) {
   statementContainer.innerHTML = student.study();
   showStudents();
+  showStudentCount();
   studentOutputBoxes.forEach(function (box) {
     box.classList.add('withcontent');
   });
