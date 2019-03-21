@@ -18,7 +18,7 @@ var inputSubject = document.getElementById('wsw-subject');
 var formFields = document.querySelectorAll('.wsw__input');
 var statementContainer = document.getElementById('student-output-statement');
 var studentCountContainer = document.getElementById('student-output-count');
-var studentListTable = document.getElementById('student-output-students-table');
+var studentList = document.getElementById('student-output-students');
 var studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
 var PersonClass = function () {
@@ -112,7 +112,7 @@ var addTableRow = function addTableRow() {
   }
 
   // Insert a row at the end of the table
-  var newRow = studentListTable.insertRow(-1);
+  var newRow = studentList.insertRow(-1);
   var newCell = void 0;
   var newText = void 0;
   for (var i = 0; i < args.length; i++) {

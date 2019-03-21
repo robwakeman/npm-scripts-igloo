@@ -230,6 +230,11 @@ h3 {
   }
 }
 
+.student-output-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .student-output {
   & p:last-of-type {
     margin-bottom: 3rem;
@@ -274,7 +279,7 @@ h3 {
   overflow-x: auto;
 }
 
-.student-output__students-table {
+.student-output__students {
   border-radius: 4px;
   border-collapse: collapse;
   font-size: 1rem;
@@ -287,7 +292,7 @@ h3 {
   & th {
     color: white;
     background: $color-dark-brown;
-    border-bottom: 4px solid #9ea7af;
+    // border-bottom: 4px solid #9ea7af;
     border-right: 1px solid darken($color-dark-brown, 20%);
     padding: 0.2rem 0.4rem;
   }

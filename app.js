@@ -8,7 +8,7 @@ const inputSubject = document.getElementById('wsw-subject');
 const formFields = document.querySelectorAll('.wsw__input');
 const statementContainer = document.getElementById('student-output-statement');
 const studentCountContainer = document.getElementById('student-output-count');
-const studentListTable = document.getElementById('student-output-students-table');
+const studentList = document.getElementById('student-output-students');
 const studentOutputBoxes = document.querySelectorAll('.student-output__box');
 
 class PersonClass {
@@ -56,7 +56,7 @@ const printStatement = student => {
 
 const addTableRow = (...args) => {
   // Insert a row at the end of the table
-  let newRow = studentListTable.insertRow(-1);
+  let newRow = studentList.insertRow(-1);
   let newCell;
   let newText;
   for (let i = 0; i < args.length; i++) {
