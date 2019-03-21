@@ -272,10 +272,6 @@ h3 {
 
 .table-responsive {
   width: 100%;
-  @include mq('small') {
-    display: flex;
-    justify-content: center;
-  }
   overflow-x: auto;
 }
 
@@ -284,6 +280,14 @@ h3 {
   border-collapse: collapse;
   font-size: 1rem;
   padding: 0.2rem 0.4rem;
+  @include mq('small') {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include mq('medium') {
+    width: 80%;
+    margin: 0 auto;
+  }
   @include mq('medium') {
     font-size: 1.2rem;
     padding: 0.75rem;
