@@ -5947,6 +5947,13 @@ h3 {
   overflow-x: auto;
 }
 
+@media only screen and (min-width: 400px) {
+  .table-responsive {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .student-output__students-table {
   border-radius: 4px;
   border-collapse: collapse;

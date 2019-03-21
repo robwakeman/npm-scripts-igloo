@@ -267,6 +267,10 @@ h3 {
 
 .table-responsive {
   width: 100%;
+  @include mq('small') {
+    display: flex;
+    justify-content: center;
+  }
   overflow-x: auto;
 }
 
