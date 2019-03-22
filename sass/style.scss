@@ -89,8 +89,10 @@ h3 {
 /*----------------------- Features Styles ------------------------------ */
 
 .features {
-  animation: slide-in 1s ease-in-out forwards;
-  transform-origin: left;
+  @include mq('medium') {
+    animation: slide-in 1s ease-in-out forwards;
+    transform-origin: left;
+  }
   display: flex;
   flex-wrap: wrap;
   > div {
@@ -145,8 +147,10 @@ h3 {
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 5px 5px 5px 0px rgba(187, 187, 187, 1);
-  transform-origin: left;
-  animation: bounce 0.6s 0.2s ease-in-out forwards;
+  @include mq('medium') {
+    transform-origin: left;
+    animation: bounce 0.6s 0.2s ease-in-out forwards;
+  }
 }
 
 @keyframes bounce {

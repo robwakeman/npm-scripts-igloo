@@ -5745,10 +5745,15 @@ h3 {
 
 /*----------------------- Features Styles ------------------------------ */
 .features {
-  animation: slide-in 1s ease-in-out forwards;
-  transform-origin: left;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .features {
+    animation: slide-in 1s ease-in-out forwards;
+    transform-origin: left;
+  }
 }
 
 .features > div {
@@ -5812,8 +5817,13 @@ h3 {
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 5px 5px 5px 0px #bbbbbb;
-  transform-origin: left;
-  animation: bounce 0.6s 0.2s ease-in-out forwards;
+}
+
+@media only screen and (min-width: 768px) {
+  .features__text {
+    transform-origin: left;
+    animation: bounce 0.6s 0.2s ease-in-out forwards;
+  }
 }
 
 @keyframes bounce {
