@@ -160,13 +160,13 @@ var makeStudent = function makeStudent(e) {
   var age = ageWsw.value;
   var subject = subjectWsw.value;
   var selectorTable = 'output-wsw';
-  var selectorClearFields = '#wsw .who__input';
+  var selectorInputFields = '#wsw .who__input';
 
   var studentObj = new Student(name, gender, age, subject);
   students.push(studentObj); // studentObj to be used for a future use
   printStatement(studentObj);
   addTableRow(selectorTable, name, gender, age, subject);
-  clearFields(selectorClearFields);
+  clearFields(selectorInputFields);
 };
 
 formWsw.addEventListener('submit', makeStudent);
@@ -235,13 +235,13 @@ var makeTeacher = function makeTeacher(e) {
   var department = departmentWtw.value;
   var subject = subjectWtw.value;
   var selectorTable = 'output-wtw';
-  var selectorClearFields = '#wtw .who__input';
+  var selectorInputFields = '#wtw .who__input';
 
   var teacherObj = new Teacher(name, department, subject);
   teachers.push(teacherObj); // teacherObj to be used for a future use
   printStatement(teacherObj);
   addTableRow(selectorTable, name, department, subject);
-  clearFields(selectorClearFields);
+  clearFields(selectorInputFields);
 };
 
 formWtw.addEventListener('submit', makeTeacher);

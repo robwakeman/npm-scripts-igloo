@@ -104,13 +104,13 @@ const makeStudent = e => {
   const age = ageWsw.value;
   const subject = subjectWsw.value;
   const selectorTable = 'output-wsw';
-  const selectorClearFields = '#wsw .who__input';
+  const selectorInputFields = '#wsw .who__input';
 
   let studentObj = new Student(name, gender, age, subject);
   students.push(studentObj); // studentObj to be used for a future use
   printStatement(studentObj);
   addTableRow(selectorTable, name, gender, age, subject);
-  clearFields(selectorClearFields);
+  clearFields(selectorInputFields);
 };
 
 formWsw.addEventListener('submit', makeStudent);
@@ -145,13 +145,13 @@ const makeTeacher = e => {
   const department = departmentWtw.value;
   const subject = subjectWtw.value;
   const selectorTable = 'output-wtw';
-  const selectorClearFields = '#wtw .who__input';
+  const selectorInputFields = '#wtw .who__input';
 
   let teacherObj = new Teacher(name, department, subject);
   teachers.push(teacherObj); // teacherObj to be used for a future use
   printStatement(teacherObj);
   addTableRow(selectorTable, name, department, subject);
-  clearFields(selectorClearFields);
+  clearFields(selectorInputFields);
 };
 
 formWtw.addEventListener('submit', makeTeacher);
