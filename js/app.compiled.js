@@ -10,16 +10,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 // who studies what
 
-var wswForm = document.getElementById('wsw');
-var inputName = document.getElementById('wsw-name');
-var inputGender = document.getElementById('wsw-gender');
-var inputAge = document.getElementById('wsw-age');
-var inputSubject = document.getElementById('wsw-subject');
-var formFields = document.querySelectorAll('#wsw .who__input');
-var statementContainer = document.getElementById('output-wsw-statement');
-var studentCountContainer = document.getElementById('output-wsw-count');
-var studentList = document.getElementById('output-wsw');
-var studentOutputBoxes = document.querySelectorAll('.output-wsw__box');
+var formWsw = document.getElementById('wsw');
+var nameWsw = document.getElementById('wsw-name');
+var genderWsw = document.getElementById('wsw-gender');
+var ageWsw = document.getElementById('wsw-age');
+var subjectWsw = document.getElementById('wsw-subject');
+var formFieldsWsw = document.querySelectorAll('#wsw .who__input');
+var statementContainerWsw = document.getElementById('output-wsw-statement');
+var countContainerWsw = document.getElementById('output-wsw-count');
+var listWsw = document.getElementById('output-wsw');
+var outputBoxesWsw = document.querySelectorAll('.output-wsw__box');
 
 var PersonClass = function () {
   function PersonClass(name, gender, age) {
@@ -95,13 +95,13 @@ var showStudentCount = function showStudentCount() {
     }
   }
 
-  studentCountContainer.innerHTML = 'Number of students: ' + studentCount;
+  countContainerWsw.innerHTML = 'Number of students: ' + studentCount;
 };
 
 var printStatement = function printStatement(student) {
-  statementContainer.innerHTML = student.study();
+  statementContainerWsw.innerHTML = student.study();
   showStudentCount();
-  studentOutputBoxes.forEach(function (box) {
+  outputBoxesWsw.forEach(function (box) {
     box.classList.add('withcontent');
   });
 };
@@ -112,7 +112,7 @@ var addTableRow = function addTableRow() {
   }
 
   // Insert a row at the end of the table
-  var newRow = studentList.insertRow(-1);
+  var newRow = listWsw.insertRow(-1);
   var newCell = void 0;
   var newText = void 0;
   for (var i = 0; i < args.length; i++) {
@@ -126,17 +126,17 @@ var addTableRow = function addTableRow() {
 };
 
 var clearFields = function clearFields() {
-  formFields.forEach(function (field) {
+  formFieldsWsw.forEach(function (field) {
     field.value = '';
   });
 };
 
 var makeStudent = function makeStudent(e) {
   e.preventDefault();
-  var name = inputName.value;
-  var gender = inputGender.value;
-  var age = inputAge.value;
-  var subject = inputSubject.value;
+  var name = nameWsw.value;
+  var gender = genderWsw.value;
+  var age = ageWsw.value;
+  var subject = subjectWsw.value;
 
   var studentObj = new Student(name, gender, age, subject);
   students.push(studentObj); // studentObj to be used for a future use
@@ -145,4 +145,4 @@ var makeStudent = function makeStudent(e) {
   clearFields();
 };
 
-wswForm.addEventListener('submit', makeStudent);
+formWsw.addEventListener('submit', makeStudent);

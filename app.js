@@ -1,15 +1,15 @@
 // who studies what
 
-const wswForm = document.getElementById('wsw');
-const inputName = document.getElementById('wsw-name');
-const inputGender = document.getElementById('wsw-gender');
-const inputAge = document.getElementById('wsw-age');
-const inputSubject = document.getElementById('wsw-subject');
-const formFields = document.querySelectorAll('#wsw .who__input');
-const statementContainer = document.getElementById('output-wsw-statement');
-const studentCountContainer = document.getElementById('output-wsw-count');
-const studentList = document.getElementById('output-wsw');
-const studentOutputBoxes = document.querySelectorAll('.output-wsw__box');
+const formWsw = document.getElementById('wsw');
+const nameWsw = document.getElementById('wsw-name');
+const genderWsw = document.getElementById('wsw-gender');
+const ageWsw = document.getElementById('wsw-age');
+const subjectWsw = document.getElementById('wsw-subject');
+const formFieldsWsw = document.querySelectorAll('#wsw .who__input');
+const statementContainerWsw = document.getElementById('output-wsw-statement');
+const countContainerWsw = document.getElementById('output-wsw-count');
+const listWsw = document.getElementById('output-wsw');
+const outputBoxesWsw = document.querySelectorAll('.output-wsw__box');
 
 class PersonClass {
   constructor(name, gender, age) {
@@ -43,20 +43,20 @@ const showStudentCount = () => {
   for (let student of students) {
     studentCount++;
   }
-  studentCountContainer.innerHTML = `Number of students: ${studentCount}`;
+  countContainerWsw.innerHTML = `Number of students: ${studentCount}`;
 };
 
 const printStatement = student => {
-  statementContainer.innerHTML = student.study();
+  statementContainerWsw.innerHTML = student.study();
   showStudentCount();
-  studentOutputBoxes.forEach(box => {
+  outputBoxesWsw.forEach(box => {
     box.classList.add('withcontent');
   });
 };
 
 const addTableRow = (...args) => {
   // Insert a row at the end of the table
-  let newRow = studentList.insertRow(-1);
+  let newRow = listWsw.insertRow(-1);
   let newCell;
   let newText;
   for (let i = 0; i < args.length; i++) {
@@ -70,17 +70,17 @@ const addTableRow = (...args) => {
 };
 
 const clearFields = () => {
-  formFields.forEach(field => {
+  formFieldsWsw.forEach(field => {
     field.value = '';
   });
 };
 
 const makeStudent = e => {
   e.preventDefault();
-  const name = inputName.value;
-  const gender = inputGender.value;
-  const age = inputAge.value;
-  const subject = inputSubject.value;
+  const name = nameWsw.value;
+  const gender = genderWsw.value;
+  const age = ageWsw.value;
+  const subject = subjectWsw.value;
 
   let studentObj = new Student(name, gender, age, subject);
   students.push(studentObj); // studentObj to be used for a future use
@@ -89,4 +89,4 @@ const makeStudent = e => {
   clearFields();
 };
 
-wswForm.addEventListener('submit', makeStudent);
+formWsw.addEventListener('submit', makeStudent);
