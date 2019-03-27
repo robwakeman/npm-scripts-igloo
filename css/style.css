@@ -5842,25 +5842,25 @@ h3 {
 }
 
 /*----------------------- Who Studies What Styles ------------------------------ */
-.wsw-wrap {
+.who-wrap {
   background-color: aliceblue;
   padding: 3rem 0 10rem 0;
 }
 
-.wsw-form-wrap {
+.who-form-wrap {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
 
-.wsw__label {
+.who__label {
   font-size: 1.25rem;
   display: block;
   padding: 0 0 4px 4px;
 }
 
-.wsw__input {
+.who__input {
   margin-bottom: 16px;
   padding: 8px;
   font-size: 1.25rem;
@@ -5871,17 +5871,17 @@ h3 {
 }
 
 @media only screen and (min-width: 768px) {
-  .wsw__input {
+  .who__input {
     width: 50vw;
   }
 }
 
-.wsw__input:focus {
+.who__input:focus {
   outline: 3px solid #2e1ba6;
   border-color: transparent;
 }
 
-.wsw__button {
+.who__button {
   font-size: 1.25rem;
   font-weight: bold;
   padding: 8px 24px;
@@ -5894,40 +5894,40 @@ h3 {
 }
 
 @media only screen and (min-width: 768px) {
-  .wsw__button {
+  .who__button {
     font-size: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .wsw__button {
+  .who__button {
     width: 50vw;
   }
 }
 
-.wsw__button:focus {
+.who__button:focus {
   outline: 2px dotted #2e1ba6;
   outline-offset: 4px;
 }
 
-.wsw__button::-moz-focus-inner {
+.who__button::-moz-focus-inner {
   border: 0;
 }
 
-.wsw__button:hover {
+.who__button:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.student-output-wrap {
+.output-wrap {
   display: flex;
   justify-content: center;
 }
 
-.student-output p:last-of-type {
+.output-wsw p:last-of-type {
   margin-bottom: 3rem;
 }
 
-.student-output__box {
+.output-wsw__box {
   background: white;
   padding: 0;
   border-radius: 4px;
@@ -5937,19 +5937,50 @@ h3 {
   transition: max-width 1s linear;
 }
 
-.student-output__box.withcontent {
+.output-wsw__box.withcontent {
   max-width: 1000px;
   padding: 1rem;
 }
 
-.student-output__statement, .student-output__count {
+.output-wsw__statement, .output-wsw__count {
   color: #2e1ba6;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .student-output__statement, .student-output__count {
+  .output-wsw__statement, .output-wsw__count {
+    font-size: 1.3rem;
+  }
+}
+
+.output-wtw p:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.output-wtw__box {
+  background: white;
+  padding: 0;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  box-shadow: 5px 5px 5px 0px #301414;
+  max-width: 0;
+  transition: max-width 1s linear;
+}
+
+.output-wtw__box.withcontent {
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.output-wtw__statement, .output-wtw__count {
+  color: #2e1ba6;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .output-wtw__statement, .output-wtw__count {
     font-size: 1.3rem;
   }
 }
@@ -5959,7 +5990,7 @@ h3 {
   overflow-x: auto;
 }
 
-.student-output__students {
+.output__who {
   border-radius: 4px;
   border-collapse: collapse;
   font-size: 1rem;
@@ -5967,27 +5998,27 @@ h3 {
 }
 
 @media only screen and (min-width: 400px) {
-  .student-output__students {
+  .output__who {
     width: 90%;
     margin: 0 auto;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .student-output__students {
+  .output__who {
     width: 80%;
     margin: 0 auto;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .student-output__students {
+  .output__who {
     font-size: 1.2rem;
     padding: 0.75rem;
   }
 }
 
-.student-output__students th {
+.output__who th {
   text-align: left;
   color: white;
   background: #d49f5a;
@@ -5996,58 +6027,58 @@ h3 {
 }
 
 @media only screen and (min-width: 400px) {
-  .student-output__students th {
+  .output__who th {
     text-align: center;
     padding: 1rem;
   }
 }
 
-.student-output__students th:first-child {
+.output__who th:first-child {
   border-top-left-radius: 3px;
 }
 
-.student-output__students th:last-child {
+.output__who th:last-child {
   border-top-right-radius: 3px;
   border-right: none;
 }
 
-.student-output__students tr {
+.output__who tr {
   text-align: left;
   border-top: 1px solid #c1c3d1;
   border-bottom: 1px solid #c1c3d1;
 }
 
-.student-output__students tr:hover td {
+.output__who tr:hover td {
   background: linen;
   color: #303030;
   border-top: 1px solid #22262e;
 }
 
-.student-output__students tr:first-child {
+.output__who tr:first-child {
   border-top: none;
 }
 
-.student-output__students tr:last-child {
+.output__who tr:last-child {
   border-bottom: none;
 }
 
-.student-output__students tr:nth-child(odd) td {
+.output__who tr:nth-child(odd) td {
   background: #f7f7f7;
 }
 
-.student-output__students tr:nth-child(odd):hover td {
+.output__who tr:nth-child(odd):hover td {
   background: linen;
 }
 
-.student-output__students tr:last-child td:first-child {
+.output__who tr:last-child td:first-child {
   border-bottom-left-radius: 3px;
 }
 
-.student-output__students tr:last-child td:last-child {
+.output__who tr:last-child td:last-child {
   border-bottom-right-radius: 3px;
 }
 
-.student-output__students td {
+.output__who td {
   background: #ffffff;
   padding: 0.2rem 0.4rem;
   vertical-align: middle;
@@ -6056,12 +6087,12 @@ h3 {
 }
 
 @media only screen and (min-width: 400px) {
-  .student-output__students td {
+  .output__who td {
     text-align: center;
     padding: 1rem;
   }
 }
 
-.student-output__students td:last-child {
+.output__who td:last-child {
   border-right: 0px;
 }

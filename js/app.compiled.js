@@ -15,11 +15,11 @@ var inputName = document.getElementById('wsw-name');
 var inputGender = document.getElementById('wsw-gender');
 var inputAge = document.getElementById('wsw-age');
 var inputSubject = document.getElementById('wsw-subject');
-var formFields = document.querySelectorAll('.wsw__input');
-var statementContainer = document.getElementById('student-output-statement');
-var studentCountContainer = document.getElementById('student-output-count');
-var studentList = document.getElementById('student-output-students');
-var studentOutputBoxes = document.querySelectorAll('.student-output__box');
+var formFields = document.querySelectorAll('#wsw .who__input');
+var statementContainer = document.getElementById('output-wsw-statement');
+var studentCountContainer = document.getElementById('output-wsw-count');
+var studentList = document.getElementById('output-wsw');
+var studentOutputBoxes = document.querySelectorAll('.output-wsw__box');
 
 var PersonClass = function () {
   function PersonClass(name, gender, age) {

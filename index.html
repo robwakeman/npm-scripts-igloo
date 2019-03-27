@@ -39,41 +39,44 @@
         </p>
       </div>
     </div>
-    <div class="wsw-wrap">
+
+    <!-- WSW Students START -->
+
+    <div class="who-wrap">
       <div class="container">
         <h3>Who Studies What?</h3>
-        <div class="wsw-form-wrap">
-          <form class="wsw" id="wsw">
-            <div class="wsw__field-group">
-              <label class="wsw__label wsw__label-name" for="wsw-name">Name</label>
-              <input class="wsw__input wsw__input-name" id="wsw-name" type="text" placeholder="e.g. Jane" pattern="^[a-zA-Z]{0,20}$" />
+        <div class="who-form-wrap">
+          <form class="who" id="wsw">
+            <div class="who__field-group">
+              <label class="who__label who__label-name" for="wsw-name">Name</label>
+              <input class="who__input who__input-name" id="wsw-name" type="text" placeholder="e.g. Jane" pattern="^[a-zA-Z]{0,20}$" />
             </div>
-            <div class="wsw__field-group">
-              <label class="wsw__label wsw__label-gender" for="wsw-gender">Gender</label>
-              <input class="wsw__input wsw__input-gender" id="wsw-gender" type="text" placeholder="e.g. female" />
+            <div class="who__field-group">
+              <label class="who__label who__label-gender" for="wsw-gender">Gender</label>
+              <input class="who__input who__input-gender" id="wsw-gender" type="text" placeholder="e.g. female" />
             </div>
-            <div class="wsw__field-group">
-              <label class="wsw__label wsw__label-age" for="wsw-age">Age (min 18)</label>
-              <input class="wsw__input wsw__input-age" id="wsw-age" type="number" min="18" placeholder="e.g. 20" />
+            <div class="who__field-group">
+              <label class="who__label who__label-age" for="wsw-age">Age (min 18)</label>
+              <input class="who__input who__input-age" id="wsw-age" type="number" min="18" placeholder="e.g. 20" />
             </div>
-            <div class="wsw__field-group">
-              <label class="wsw__label wsw__label-subject" for="wsw-subject">Subject</label>
-              <input class="wsw__input wsw__input-subject" id="wsw-subject" type="text" placeholder="e.g. Maths" />
+            <div class="who__field-group">
+              <label class="who__label who__label-subject" for="wsw-subject">Subject</label>
+              <input class="who__input who__input-subject" id="wsw-subject" type="text" placeholder="e.g. Maths" />
             </div>
-            <div class="wsw__group">
-              <button class="wsw__button" type="submit">Generate student data</button>
+            <div class="who__group">
+              <button class="who__button" type="submit">Generate student data</button>
             </div>
           </form>
         </div>
 
-        <div class="student-output-wrap">
-          <div class="student-output">
-            <p class="student-output__box student-output__statement" id="student-output-statement"></p>
-            <p class="student-output__box student-output__count" id="student-output-count"></p>
+        <div class="output-wrap">
+          <div class="output-wsw">
+            <p class="output-wsw__box output-wsw__statement" id="output-wsw-statement"></p>
+            <p class="output-wsw__box output-wsw__count" id="output-wsw-count"></p>
           </div>
         </div>
         <div class="table-responsive">
-          <table class="student-output__students" id="student-output-students">
+          <table class="output__who" id="output-wsw">
             <tr>
               <th>Name</th>
               <th>Gender</th>
@@ -84,6 +87,51 @@
         </div>
       </div>
     </div>
+
+    <!-- WTW Teachers START -->
+
+    <div class="who-wrap">
+      <div class="container">
+        <h3>Who Teaches What?</h3>
+        <div class="who-form-wrap">
+          <form class="who" id="wtw">
+            <div class="who__field-group">
+              <label class="who__label who__label-name" for="wtw-name">Name</label>
+              <input class="who__input who__input-name" id="wtw-name" type="text" placeholder="e.g. Jane" pattern="^[a-zA-Z]{0,20}$" />
+            </div>
+            <div class="who__field-group">
+              <label class="who__label who__label-department" for="wtw-department">Department</label>
+              <input class="who__input who__input-department" id="wtw-department" type="text" placeholder="e.g. Science" />
+            </div>
+            <div class="who__field-group">
+              <label class="who__label who__label-subject" for="wtw-subject">Subject</label>
+              <input class="who__input who__input-subject" id="wtw-subject" type="text" placeholder="e.g. Maths" />
+            </div>
+            <div class="who__group">
+              <button class="who__button" type="submit">Generate teacher data</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="output-wrap">
+          <div class="output-wtw">
+            <p class="output-wtw__box output-wtw__statement" id="output-wtw-statement"></p>
+            <p class="output-wtw__box output-wtw__count" id="output-wtw-count"></p>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="output__who" id="output-wtw">
+            <tr>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Subject</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <script src="js/app.compiled.js"></script>
   </body>
 </html>

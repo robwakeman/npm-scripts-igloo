@@ -5,11 +5,11 @@ const inputName = document.getElementById('wsw-name');
 const inputGender = document.getElementById('wsw-gender');
 const inputAge = document.getElementById('wsw-age');
 const inputSubject = document.getElementById('wsw-subject');
-const formFields = document.querySelectorAll('.wsw__input');
-const statementContainer = document.getElementById('student-output-statement');
-const studentCountContainer = document.getElementById('student-output-count');
-const studentList = document.getElementById('student-output-students');
-const studentOutputBoxes = document.querySelectorAll('.student-output__box');
+const formFields = document.querySelectorAll('#wsw .who__input');
+const statementContainer = document.getElementById('output-wsw-statement');
+const studentCountContainer = document.getElementById('output-wsw-count');
+const studentList = document.getElementById('output-wsw');
+const studentOutputBoxes = document.querySelectorAll('.output-wsw__box');
 
 class PersonClass {
   constructor(name, gender, age) {
