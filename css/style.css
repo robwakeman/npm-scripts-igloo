@@ -5988,10 +5988,18 @@ h3 {
 }
 
 .student-output__students th {
+  text-align: left;
   color: white;
   background: #d49f5a;
   border-right: 1px solid #9f6c29;
   padding: 0.2rem 0.4rem;
+}
+
+@media only screen and (min-width: 400px) {
+  .student-output__students th {
+    text-align: center;
+    padding: 1rem;
+  }
 }
 
 .student-output__students th:first-child {
@@ -6004,6 +6012,7 @@ h3 {
 }
 
 .student-output__students tr {
+  text-align: left;
   border-top: 1px solid #c1c3d1;
   border-bottom: 1px solid #c1c3d1;
 }
@@ -6040,10 +6049,17 @@ h3 {
 
 .student-output__students td {
   background: #ffffff;
-  padding: 1rem;
+  padding: 0.2rem 0.4rem;
   vertical-align: middle;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   border-right: 1px solid #c1c3d1;
+}
+
+@media only screen and (min-width: 400px) {
+  .student-output__students td {
+    text-align: center;
+    padding: 1rem;
+  }
 }
 
 .student-output__students td:last-child {

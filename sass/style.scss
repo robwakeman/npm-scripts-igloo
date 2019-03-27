@@ -295,11 +295,15 @@ h3 {
   }
 
   & th {
+    text-align: left;
     color: white;
     background: $color-dark-brown;
-    // border-bottom: 4px solid #9ea7af;
     border-right: 1px solid darken($color-dark-brown, 20%);
     padding: 0.2rem 0.4rem;
+    @include mq('small') {
+      text-align: center;
+      padding: 1rem;
+    }
   }
 
   & th:first-child {
@@ -312,6 +316,7 @@ h3 {
   }
 
   & tr {
+    text-align: left;
     border-top: 1px solid #c1c3d1;
     border-bottom: 1px solid #c1c3d1;
   }
@@ -347,7 +352,11 @@ h3 {
 
   & td {
     background: #ffffff;
-    padding: 1rem;
+    padding: 0.2rem 0.4rem;
+    @include mq('small') {
+      text-align: center;
+      padding: 1rem;
+    }
     vertical-align: middle;
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
     border-right: 1px solid #c1c3d1;
