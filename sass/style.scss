@@ -82,8 +82,9 @@ h3 {
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto 4rem;
+  max-width: 1000px;
+  width: calc(100vw - 4rem);
+  margin: 0 auto;
 }
 
 /*----------------------- Features Styles ------------------------------ */
