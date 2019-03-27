@@ -9,7 +9,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // who studies what
-
 var formWsw = document.getElementById('wsw');
 var nameWsw = document.getElementById('wsw-name');
 var genderWsw = document.getElementById('wsw-gender');
@@ -18,8 +17,17 @@ var subjectWsw = document.getElementById('wsw-subject');
 var formFieldsWsw = document.querySelectorAll('#wsw .who__input');
 var statementContainerWsw = document.getElementById('output-wsw-statement');
 var countContainerWsw = document.getElementById('output-wsw-count');
-var listWsw = document.getElementById('output-wsw');
 var outputBoxesWsw = document.querySelectorAll('.output-wsw__box');
+
+// who teaches what
+var formWtw = document.getElementById('wtw');
+var nameWtw = document.getElementById('wtw-name');
+var departmentWtw = document.getElementById('wtw-department');
+var subjectWtw = document.getElementById('wtw-subject');
+var formFieldsWtw = document.querySelectorAll('#wtw .who__input');
+var statementContainerWtw = document.getElementById('output-wtw-statement');
+var countContainerWtw = document.getElementById('output-wtw-count');
+var outputBoxesWtw = document.querySelectorAll('.output-wtw__box');
 
 var PersonClass = function () {
   function PersonClass(name, gender, age) {
@@ -40,7 +48,7 @@ var PersonClass = function () {
   return PersonClass;
 }();
 
-// sub class
+// sub class Student
 
 
 var Student = function (_PersonClass) {
@@ -76,7 +84,7 @@ var showStudentCount = function showStudentCount() {
 
   try {
     for (var _iterator = students[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var student = _step.value;
+      var _student = _step.value;
 
       studentCount++;
     }
@@ -98,21 +106,38 @@ var showStudentCount = function showStudentCount() {
   countContainerWsw.innerHTML = 'Number of students: ' + studentCount;
 };
 
-var printStatement = function printStatement(student) {
-  statementContainerWsw.innerHTML = student.study();
-  showStudentCount();
-  outputBoxesWsw.forEach(function (box) {
-    box.classList.add('withcontent');
-  });
+// shared function printStatement
+var printStatement = function printStatement(personType) {
+  if (personType === 'student') {
+    statementContainerWsw.innerHTML = student.study();
+    showStudentCount();
+    outputBoxesWsw.forEach(function (box) {
+      box.classList.add('withcontent');
+    });
+  } else if (personType === 'teacher') {
+    statementContainerWtw.innerHTML = teacher.teach();
+    showTeacherCount();
+    outputBoxesWtw.forEach(function (box) {
+      box.classList.add('withcontent');
+    });
+  }
 };
 
-var addTableRow = function addTableRow() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
+// shared function addTableRow
+var addTableRow = function addTableRow(personType) {
+  for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
   }
 
+  var list = void 0;
   // Insert a row at the end of the table
-  var newRow = listWsw.insertRow(-1);
+  if (personType === 'student') {
+    list = document.getElementById('output-wsw');
+  } else if (personType === 'teacher') {
+    list = document.getElementById('output-wtw');
+  }
+
+  var newRow = list.insertRow(-1);
   var newCell = void 0;
   var newText = void 0;
   for (var i = 0; i < args.length; i++) {
@@ -125,14 +150,17 @@ var addTableRow = function addTableRow() {
   }
 };
 
-var clearFields = function clearFields() {
-  formFieldsWsw.forEach(function (field) {
+// shared function clearFields
+var clearFields = function clearFields(inputFieldsSelector) {
+  var inputFields = document.querySelectorAll(inputFieldsSelector);
+  inputFields.forEach(function (field) {
     field.value = '';
   });
 };
 
 var makeStudent = function makeStudent(e) {
   e.preventDefault();
+  var pType = 'student';
   var name = nameWsw.value;
   var gender = genderWsw.value;
   var age = ageWsw.value;
@@ -141,8 +169,82 @@ var makeStudent = function makeStudent(e) {
   var studentObj = new Student(name, gender, age, subject);
   students.push(studentObj); // studentObj to be used for a future use
   printStatement(studentObj);
-  addTableRow(name, gender, age, subject);
-  clearFields();
+  addTableRow(pType, name, gender, age, subject);
+  clearFields('#wsw .who__input');
 };
 
 formWsw.addEventListener('submit', makeStudent);
+
+// sub class Teacher
+
+var Teacher = function (_PersonClass2) {
+  _inherits(Teacher, _PersonClass2);
+
+  function Teacher(name, department, subject) {
+    _classCallCheck(this, Teacher);
+
+    var _this2 = _possibleConstructorReturn(this, (Teacher.__proto__ || Object.getPrototypeOf(Teacher)).call(this, name));
+
+    _this2.department = department;
+    _this2.subject = subject;
+    return _this2;
+  }
+
+  _createClass(Teacher, [{
+    key: 'teach',
+    value: function teach() {
+      return this.name + ' teaches ' + this.subject + ' and works in the ' + this.department + ' department.';
+    }
+  }]);
+
+  return Teacher;
+}(PersonClass);
+
+var teachers = [];
+var teacherCount = 0;
+
+var showTeacherCount = function showTeacherCount() {
+  teacherCount = 0;
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    for (var _iterator2 = teachers[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      var _teacher = _step2.value;
+
+      teacherCount++;
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
+
+  countContainerWtw.innerHTML = 'Number of teachers: ' + teacherCount;
+};
+
+var makeTeacher = function makeTeacher(e) {
+  e.preventDefault();
+  var pType = 'teacher';
+  var name = nameWtw.value;
+  var department = departmentWtw.value;
+  var subject = subjectWtw.value;
+
+  var teacherObj = new Teacher(name, department, subject);
+  teachers.push(teacherObj); // teacherObj to be used for a future use
+  printStatement(teacherObj);
+  addTableRow(pType, name, department, subject);
+  clearFields('#wtw .who__input');
+};
+
+formWtw.addEventListener('submit', makeTeacher);
