@@ -124,18 +124,13 @@ var printStatement = function printStatement(personType) {
 };
 
 // shared function addTableRow
-var addTableRow = function addTableRow(personType) {
+var addTableRow = function addTableRow(selectorTable) {
   for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     args[_key - 1] = arguments[_key];
   }
 
-  var list = void 0;
   // Insert a row at the end of the table
-  if (personType === 'student') {
-    list = document.getElementById('output-wsw');
-  } else if (personType === 'teacher') {
-    list = document.getElementById('output-wtw');
-  }
+  var list = document.getElementById(selectorTable);
 
   var newRow = list.insertRow(-1);
   var newCell = void 0;
@@ -160,17 +155,18 @@ var clearFields = function clearFields(inputFieldsSelector) {
 
 var makeStudent = function makeStudent(e) {
   e.preventDefault();
-  var pType = 'student';
   var name = nameWsw.value;
   var gender = genderWsw.value;
   var age = ageWsw.value;
   var subject = subjectWsw.value;
+  var selectorTable = 'output-wsw';
+  var selectorClearFields = '#wsw .who__input';
 
   var studentObj = new Student(name, gender, age, subject);
   students.push(studentObj); // studentObj to be used for a future use
   printStatement(studentObj);
-  addTableRow(pType, name, gender, age, subject);
-  clearFields('#wsw .who__input');
+  addTableRow(selectorTable, name, gender, age, subject);
+  clearFields(selectorClearFields);
 };
 
 formWsw.addEventListener('submit', makeStudent);
@@ -235,16 +231,17 @@ var showTeacherCount = function showTeacherCount() {
 
 var makeTeacher = function makeTeacher(e) {
   e.preventDefault();
-  var pType = 'teacher';
   var name = nameWtw.value;
   var department = departmentWtw.value;
   var subject = subjectWtw.value;
+  var selectorTable = 'output-wtw';
+  var selectorClearFields = '#wtw .who__input';
 
   var teacherObj = new Teacher(name, department, subject);
   teachers.push(teacherObj); // teacherObj to be used for a future use
   printStatement(teacherObj);
-  addTableRow(pType, name, department, subject);
-  clearFields('#wtw .who__input');
+  addTableRow(selectorTable, name, department, subject);
+  clearFields(selectorClearFields);
 };
 
 formWtw.addEventListener('submit', makeTeacher);

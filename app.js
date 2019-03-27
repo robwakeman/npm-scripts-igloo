@@ -72,14 +72,9 @@ const printStatement = personType => {
 };
 
 // shared function addTableRow
-const addTableRow = (personType, ...args) => {
-  let list;
+const addTableRow = (selectorTable, ...args) => {
   // Insert a row at the end of the table
-  if (personType === 'student') {
-    list = document.getElementById('output-wsw');
-  } else if (personType === 'teacher') {
-    list = document.getElementById('output-wtw');
-  }
+  let list = document.getElementById(selectorTable);
 
   let newRow = list.insertRow(-1);
   let newCell;
@@ -104,17 +99,18 @@ const clearFields = inputFieldsSelector => {
 
 const makeStudent = e => {
   e.preventDefault();
-  const pType = 'student';
   const name = nameWsw.value;
   const gender = genderWsw.value;
   const age = ageWsw.value;
   const subject = subjectWsw.value;
+  const selectorTable = 'output-wsw';
+  const selectorClearFields = '#wsw .who__input';
 
   let studentObj = new Student(name, gender, age, subject);
   students.push(studentObj); // studentObj to be used for a future use
   printStatement(studentObj);
-  addTableRow(pType, name, gender, age, subject);
-  clearFields('#wsw .who__input');
+  addTableRow(selectorTable, name, gender, age, subject);
+  clearFields(selectorClearFields);
 };
 
 formWsw.addEventListener('submit', makeStudent);
@@ -145,16 +141,17 @@ const showTeacherCount = () => {
 
 const makeTeacher = e => {
   e.preventDefault();
-  const pType = 'teacher';
   const name = nameWtw.value;
   const department = departmentWtw.value;
   const subject = subjectWtw.value;
+  const selectorTable = 'output-wtw';
+  const selectorClearFields = '#wtw .who__input';
 
   let teacherObj = new Teacher(name, department, subject);
   teachers.push(teacherObj); // teacherObj to be used for a future use
   printStatement(teacherObj);
-  addTableRow(pType, name, department, subject);
-  clearFields('#wtw .who__input');
+  addTableRow(selectorTable, name, department, subject);
+  clearFields(selectorClearFields);
 };
 
 formWtw.addEventListener('submit', makeTeacher);
