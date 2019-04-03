@@ -172,7 +172,11 @@ h3 {
 
 .who-wrap {
   background-color: $color-background-other;
-  padding: 3rem 0 10rem 0;
+  padding: 3rem 0 3rem 0;
+  & .container {
+    padding-bottom: 6rem;
+    border-bottom: $color-text dashed 1px;
+  }
 }
 
 .who-form-wrap {

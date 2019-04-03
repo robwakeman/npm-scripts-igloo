@@ -5844,7 +5844,12 @@ h3 {
 /*----------------------- Who Studies What Styles ------------------------------ */
 .who-wrap {
   background-color: aliceblue;
-  padding: 3rem 0 10rem 0;
+  padding: 3rem 0 3rem 0;
+}
+
+.who-wrap .container {
+  padding-bottom: 6rem;
+  border-bottom: #303030 dashed 1px;
 }
 
 .who-form-wrap {
