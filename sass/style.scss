@@ -174,8 +174,11 @@ h3 {
   background-color: $color-background-other;
   padding: 3rem 0 3rem 0;
   & .container {
-    padding-bottom: 6rem;
+    padding-bottom: 5rem;
     border-bottom: $color-text dashed 1px;
+  }
+  &:nth-child(2n) .container {
+    border-bottom: none;
   }
 }
 

@@ -5848,8 +5848,12 @@ h3 {
 }
 
 .who-wrap .container {
-  padding-bottom: 6rem;
+  padding-bottom: 5rem;
   border-bottom: #303030 dashed 1px;
+}
+
+.who-wrap:nth-child(2n) .container {
+  border-bottom: none;
 }
 
 .who-form-wrap {
