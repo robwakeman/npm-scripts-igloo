@@ -55,15 +55,15 @@ const showStudentCount = () => {
 };
 
 // shared function printStatement
-const printStatement = personType => {
-  if (personType === 'student') {
-    statementContainerWsw.innerHTML = student.study();
+const printStatement = (personType, personObj) => {
+  if (personType === 'typestudent') {
+    statementContainerWsw.innerHTML = personObj.study();
     showStudentCount();
     outputBoxesWsw.forEach(box => {
       box.classList.add('withcontent');
     });
-  } else if (personType === 'teacher') {
-    statementContainerWtw.innerHTML = teacher.teach();
+  } else if (personType === 'typeteacher') {
+    statementContainerWtw.innerHTML = personObj.teach();
     showTeacherCount();
     outputBoxesWtw.forEach(box => {
       box.classList.add('withcontent');
@@ -107,8 +107,8 @@ const makeStudent = e => {
   const selectorInputFields = '#wsw .who__input';
 
   let studentObj = new Student(name, gender, age, subject);
-  students.push(studentObj); // studentObj to be used for a future use
-  printStatement(studentObj);
+  students.push(studentObj);
+  printStatement('typestudent', studentObj);
   addTableRow(selectorTable, name, gender, age, subject);
   clearFields(selectorInputFields);
 };
@@ -148,8 +148,8 @@ const makeTeacher = e => {
   const selectorInputFields = '#wtw .who__input';
 
   let teacherObj = new Teacher(name, department, subject);
-  teachers.push(teacherObj); // teacherObj to be used for a future use
-  printStatement(teacherObj);
+  teachers.push(teacherObj);
+  printStatement('typeteacher', teacherObj);
   addTableRow(selectorTable, name, department, subject);
   clearFields(selectorInputFields);
 };

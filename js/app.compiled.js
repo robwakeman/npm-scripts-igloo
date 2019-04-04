@@ -84,7 +84,7 @@ var showStudentCount = function showStudentCount() {
 
   try {
     for (var _iterator = students[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var _student = _step.value;
+      var student = _step.value;
 
       studentCount++;
     }
@@ -107,15 +107,15 @@ var showStudentCount = function showStudentCount() {
 };
 
 // shared function printStatement
-var printStatement = function printStatement(personType) {
-  if (personType === 'student') {
-    statementContainerWsw.innerHTML = student.study();
+var printStatement = function printStatement(personType, personObj) {
+  if (personType === 'typestudent') {
+    statementContainerWsw.innerHTML = personObj.study();
     showStudentCount();
     outputBoxesWsw.forEach(function (box) {
       box.classList.add('withcontent');
     });
-  } else if (personType === 'teacher') {
-    statementContainerWtw.innerHTML = teacher.teach();
+  } else if (personType === 'typeteacher') {
+    statementContainerWtw.innerHTML = personObj.teach();
     showTeacherCount();
     outputBoxesWtw.forEach(function (box) {
       box.classList.add('withcontent');
@@ -163,8 +163,8 @@ var makeStudent = function makeStudent(e) {
   var selectorInputFields = '#wsw .who__input';
 
   var studentObj = new Student(name, gender, age, subject);
-  students.push(studentObj); // studentObj to be used for a future use
-  printStatement(studentObj);
+  students.push(studentObj);
+  printStatement('typestudent', studentObj);
   addTableRow(selectorTable, name, gender, age, subject);
   clearFields(selectorInputFields);
 };
@@ -207,7 +207,7 @@ var showTeacherCount = function showTeacherCount() {
 
   try {
     for (var _iterator2 = teachers[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var _teacher = _step2.value;
+      var teacher = _step2.value;
 
       teacherCount++;
     }
@@ -238,8 +238,8 @@ var makeTeacher = function makeTeacher(e) {
   var selectorInputFields = '#wtw .who__input';
 
   var teacherObj = new Teacher(name, department, subject);
-  teachers.push(teacherObj); // teacherObj to be used for a future use
-  printStatement(teacherObj);
+  teachers.push(teacherObj);
+  printStatement('typeteacher', teacherObj);
   addTableRow(selectorTable, name, department, subject);
   clearFields(selectorInputFields);
 };
