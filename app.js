@@ -36,10 +36,11 @@ class Student extends PersonClass {
   constructor(name, gender, age, subject) {
     super(name, gender, age);
     this.subject = subject;
+    this.gender = gender.toLowerCase();
   }
 
   study() {
-    return `${this.name} is aged ${this.age}. ${this.gender.toLowerCase() === 'male' ? 'He' : 'She'} is studying ${this.subject}.`;
+    return `${this.name} is aged ${this.age}. ${this.gender === 'male' ? 'He' : 'She'} is studying ${this.subject}.`;
   }
 }
 
@@ -100,7 +101,7 @@ const clearFields = inputFieldsSelector => {
 const makeStudent = e => {
   e.preventDefault();
   const name = nameWsw.value;
-  const gender = genderWsw.value;
+  const gender = genderWsw.value.toLowerCase();
   const age = ageWsw.value;
   const subject = subjectWsw.value;
   const selectorTable = 'output-wsw';

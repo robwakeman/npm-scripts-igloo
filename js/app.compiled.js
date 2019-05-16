@@ -60,13 +60,14 @@ var Student = function (_PersonClass) {
     var _this = _possibleConstructorReturn(this, (Student.__proto__ || Object.getPrototypeOf(Student)).call(this, name, gender, age));
 
     _this.subject = subject;
+    _this.gender = gender.toLowerCase();
     return _this;
   }
 
   _createClass(Student, [{
     key: 'study',
     value: function study() {
-      return this.name + ' is aged ' + this.age + '. ' + (this.gender.toLowerCase() === 'male' ? 'He' : 'She') + ' is studying ' + this.subject + '.';
+      return this.name + ' is aged ' + this.age + '. ' + (this.gender === 'male' ? 'He' : 'She') + ' is studying ' + this.subject + '.';
     }
   }]);
 
@@ -156,7 +157,7 @@ var clearFields = function clearFields(inputFieldsSelector) {
 var makeStudent = function makeStudent(e) {
   e.preventDefault();
   var name = nameWsw.value;
-  var gender = genderWsw.value;
+  var gender = genderWsw.value.toLowerCase();
   var age = ageWsw.value;
   var subject = subjectWsw.value;
   var selectorTable = 'output-wsw';
